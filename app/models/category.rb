@@ -1,3 +1,4 @@
 class Categorization < ActiveRecord::Base
-  has_many :Categorizations
+  has_many :categorizations
+  belongs_to :workout
 end
