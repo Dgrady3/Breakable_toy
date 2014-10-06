@@ -1,1 +1,9 @@
-<h3>list of categories</h3>
+<h3>Workout categories</h3>
+
+<p>Pick a category you would like to focus on today:</p>
+
+<ul>
+  <% @workouts.each do |workout|%>
+    <li><%= workout.name%></li>
+  <% end %>
+</ul>

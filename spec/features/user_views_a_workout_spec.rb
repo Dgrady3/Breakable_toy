@@ -7,8 +7,8 @@ feature "User views a list of workouts", %{
 
   scenario "User views " do
     visit root_path
-    click_on "Workout categories"
-    expect(page).to have_content "Please choose a category to focus on for your workout"
+    click_on "Find a workout"
+    expect(page).to have_content "Workout Categories"
     expect(page).to have_content "Back"
     expect(page).to have_content "Chest"
     expect(page).to have_content "Arms"

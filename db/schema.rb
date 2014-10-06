@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141006001838) do
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "workouts", force: true do |t|
-    t.string "category", null: false
+    t.string "name", null: false
   end
 
 end
