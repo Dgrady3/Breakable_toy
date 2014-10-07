@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(version: 20141006210335) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  create_table "workout_exercise_connector", force: true do |t|
+  create_table "workout_exercise_connectors", force: true do |t|
     t.integer "exercise_id", null: false
+    t.integer "workout_id",  null: false
     t.integer "sets",        null: false
     t.integer "reps",        null: false
     t.integer "rest_time"
