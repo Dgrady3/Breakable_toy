@@ -4,17 +4,13 @@
 # workout
 #   Category
 #     exercises
-a, *b = ARGV
-
-binding.pry
-
  hash = {
-  back: ["Lat Pulldown"],
-  chest: ["Bench Press"],
-  arms: ["Curls"],
-  shoulders: ["Shoulder Press"],
-  legs: ["Squats"],
-  core: ["Sit ups"]
+  back: ["Lat pulldown", "Low rows", "Pulldowns", "Wide grip pullups"],
+  chest: ["Bench press", "Flyes", "Incline bench press", "Decline bench press"],
+  arms: ["Tricep cable pushdowns", "Tricep extensions", "Bicep dumbbell curls", "Hammer curls"],
+  shoulders: ["Shoulder Press", "Lateral dumbbell raises", "Front dumbbell raises"],
+  legs: ["Squats", "Quad extensions", "Hamstring curls", "Calf raises"],
+  core: ["Sit ups", "Planks", "Oblique twists", "Medicine ball situps"]
 }
 
 hash.each do |c, ex|
@@ -26,6 +22,7 @@ hash.each do |c, ex|
     Categorization.find_or_create_by(exercise_id: exercise.id, category_id: category.id)
   end
 end
+
 
 # back.new
 # chest.new

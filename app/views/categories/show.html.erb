@@ -1,7 +1,9 @@
 <h4><%= @category.name %></h4>
 
 <ul>
-  <% @exercises.each do |exercise|  %>
-    <li><%= exercise.name %></li>
+  <% @category.exercises.each do |exercise|  %>
+    <li><%= link_to "#{exercise.name}",exercise_path(exercise) %></li>
   <% end %>
 </ul>
+
+<%= link_to "Back to Categories", categories_path %>
