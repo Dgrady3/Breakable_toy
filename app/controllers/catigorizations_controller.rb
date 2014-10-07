@@ -1,4 +1,4 @@
-class CategoizationsController < ApplicationController
+class CategorizationsController < ApplicationController
   def index
   end
 end
