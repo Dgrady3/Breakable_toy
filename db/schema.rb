@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20141007025921) do
   end
 
   create_table "categorizations", force: true do |t|
-    t.integer "workout_id",  null: false
+    t.integer "exercise_id", null: false
     t.integer "category_id", null: false
   end
 

@@ -1,1 +1,7 @@
 <h4><%= @category.name %></h4>
+
+<ul>
+  <% @exercises.each do |exercise|  %>
+    <li><%= exercise.name %></li>
+  <% end %>
+</ul>
