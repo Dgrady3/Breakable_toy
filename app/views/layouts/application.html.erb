@@ -10,15 +10,21 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
-  <body>
-    <% if current_user %>
-        <li><%= link_to "Sign Out", destroy_user_session_path, :method => :delete %></li>
-      <% else %>
-        <li><%= link_to "Sign in", new_user_session_path%></li>
-        <li><%= link_to "Sign up", new_user_registration_path%></li>
-      <% end %>
 
-    <%= yield %>
+  <body>
+
+   <div class="container">
+      <%= render 'layouts/nav' %>
+
+      <% flash.each do |name, msg| %>
+        <div class="alert-box <%= name %>">
+          <%= msg %>
+        </div>
+      <% end %>
+      <div class="row">
+        <%= yield %>
+      </div>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>

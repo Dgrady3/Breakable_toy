@@ -4,6 +4,7 @@
 # workout
 #   Category
 #     exercises
+
  hash = {
   back: ["Lat pulldown", "Low rows", "Pulldowns", "Wide grip pullups"],
   chest: ["Bench press", "Flyes", "Incline bench press", "Decline bench press"],
@@ -17,16 +18,12 @@ hash.each do |c, ex|
   category = Category.find_or_create_by(name: c.to_s.capitalize)
 
   ex.each do |exc|
-    exercise = Exercise.find_or_create_by(name: exc, description:)
+    exercise = Exercise.find_or_create_by(name: exc)
 
     Categorization.find_or_create_by(exercise_id: exercise.id, category_id: category.id)
   end
 end
 
-
-# back.new
-# chest.new
-# arms.new
 
 
 
