@@ -25,7 +25,11 @@ hash.each do |c, ex|
 end
 
 
+WORKOUTS = ["Bicep blaster", "Boulder shoulders"]
 
+WORKOUTS.each do |w|
+  Workout.find_or_create_by(name: w)
+end
 
 
 

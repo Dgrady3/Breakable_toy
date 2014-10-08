@@ -1,9 +1,11 @@
-<h3>Popular Workout </h3>
+<h4>Workouts Completed</h4>
 
-<p>Here is a list of some of our most popular workouts:</p>
+<div>
+  <ul>
+    <% @workouts.each do |sesh| %>
+      <li><%= sesh.name %></li>
+    <%end%>
+  </ul>
+</div>
 
-<ul>
-  <% @workouts.each do |workout|%>
-    <li><%= link_to "#{workout.name}", workout_path(workout)%></li>
-  <% end %>
-</ul>
+<%= link_to "Back to Profile", user_path(current_user)%>

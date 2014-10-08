@@ -1,1 +1,15 @@
-<%= "#{ @user.first_name } " "#{ @user.last_name }" %>
+<%= "#{ @user.first_name } " "#{ @user.last_name }" %><br>
+
+
+
+
+
+<%= link_to "View Completed Workouts", user_workouts_path(@user)%><br>
+
+
+<%= link_to "Edit Profile", edit_user_path(@user) %>
+
+
+<!--
+pending on carrier wave
+<%= image_tag @user.profile_photo_url.to_s %> -->
