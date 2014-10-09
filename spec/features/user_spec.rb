@@ -28,13 +28,13 @@ feature "User adds a workout to their profile", %Q{
     sign_in_as(user)
     visit root_path
     click_on "Profile Page"
-    click_on "Add a workout "
+    click_on "Add a workout"
     fill_in "Workout Name"
-    fill_in "Date Completed"
+    fill_in "Exercise Name"
     fill_in "Rest time"
     fill_in "Sets"
     fill_in "Reps"
-    expect(page).to have_content "The workout has been added!"
 
+    expect(page).to have_content "The workout has been added!"
 end
 

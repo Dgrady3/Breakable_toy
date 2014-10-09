@@ -9,24 +9,36 @@ class WorkoutsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @workout = Workout.new
   end
 
   def create
-    @workout = Workout.new
+
+    @workout = Workout.create(workout_params)
     if @workout.save
-      redirect_to @workout_path(current_user) flash[:notice] = "The workout has been added!"
+      redirect_to user_workout_path(current_user), flash[:notice] = "The workout has been added!"
     else
-      render :new
-      flash[:notice] = "Oops, your workout could not be saved"
-    end
-
-
-    private
-
-    def workout_params
-      params.require(:workout).permit(:date_completed, :description, :sets, :reps, :rest_time)
+      render :new,
+      flash[:error] = "Oops, your workout could not be saved"
     end
   end
+
+  private
+
+  def workout_params
+    params.require(:workout).permit(:name)
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+

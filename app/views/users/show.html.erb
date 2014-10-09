@@ -1,13 +1,16 @@
-<%= "#{ @user.first_name } " "#{ @user.last_name }" %><br>
+<%= "#{ @user.first_name } " "#{ @user.last_name }" %><br><br>
 
 
 
 
 
-<%= link_to "View Completed Workouts", user_workouts_path(@user)%><br>
+<%= link_to "View Completed Workouts", user_workouts_path(@user)%><br><br>
 
 
-<%= link_to "Edit Profile", edit_user_path(@user) %>
+<%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+
+
+<%= link_to "Add a workout", new_user_workout_path(@user) %>
 
 
 <!--

@@ -1,9 +1,0 @@
-<h3>Workout Categories </h3>
-
-<p>Each selected category will list exercises that focus on that area of the body :</p>
-
-<ul>
-  <% @categories.each do |category|%>
-    <li><%= link_to "#{category.name}", category_path(category)%></li>
-  <% end %>
-</ul>

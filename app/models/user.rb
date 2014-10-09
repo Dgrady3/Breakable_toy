@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-  has_many :workout_sessions
-  has_many :workouts, through: :workout_sessions
+  has_many :workouts
 
   validates :first_name, :last_name, :email, :role, presence: true
 
