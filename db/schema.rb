@@ -11,19 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008015525) do
+ActiveRecord::Schema.define(version: 20141009014237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "categories", force: true do |t|
-    t.string "name", null: false
-  end
-
-  create_table "categorizations", force: true do |t|
-    t.integer "exercise_id", null: false
-    t.integer "category_id", null: false
-  end
 
   create_table "exercises", force: true do |t|
     t.string "name",        null: false
@@ -59,20 +50,13 @@ ActiveRecord::Schema.define(version: 20141008015525) do
   create_table "workout_exercise_connectors", force: true do |t|
     t.integer "exercise_id", null: false
     t.integer "workout_id",  null: false
-    t.integer "sets"
-    t.integer "reps"
-    t.integer "rest_time"
-  end
-
-  create_table "workout_sessions", force: true do |t|
-    t.integer "user_id",        null: false
-    t.integer "workout_id",     null: false
-    t.string  "date_completed"
-    t.string  "description"
   end
 
   create_table "workouts", force: true do |t|
-    t.string "name", null: false
+    t.string  "name",      null: false
+    t.integer "reps"
+    t.integer "sets"
+    t.string  "rest_time"
   end
 
 end

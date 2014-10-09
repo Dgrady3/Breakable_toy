@@ -12,16 +12,6 @@
   shoulders: ["Shoulder Press", "Lateral dumbbell raises", "Front dumbbell raises"],
   legs: ["Squats", "Quad extensions", "Hamstring curls", "Calf raises"],
   core: ["Sit ups", "Planks", "Oblique twists", "Medicine ball situps"]
-}
-
-hash.each do |c, ex|
-  category = Category.find_or_create_by(name: c.to_s.capitalize)
-
-  ex.each do |exc|
-    exercise = Exercise.find_or_create_by(name: exc)
-
-    Categorization.find_or_create_by(exercise_id: exercise.id, category_id: category.id)
-  end
 end
 
 
