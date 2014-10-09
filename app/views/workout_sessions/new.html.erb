@@ -3,21 +3,17 @@
 <div id="Workout_container">
   <%= form_for [current_user, @workout_session]  do |f| %>
     <div id="Exercise_form" class="lift_column">
-
       <%= f.label :date_completed %>
       <%= f.date_select :date_completed %>
-
       <%= f.label :description %>
       <%= f.text_area :description %>
-
+       <p>Workout Info</p>
       <fieldset>
         <%= f.fields_for :workouts do |workout| %>
           <%= render 'workout_fields', f: workout %>
         <% end %>
-
       </fieldset>
       <%= f.submit %>
-
     </div>
   <%end%>
 </div>

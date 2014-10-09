@@ -1,0 +1,7 @@
+<%= f.label :name, "Workout Name" %>
+<%= f.text_field :name %>
+<fieldset>
+  <%= f.fields_for :workout_exercise_connector do |workout| %>
+    <%= render 'workout_exercise_connector_fields', f: workout %>
+  <% end %>
+</fieldset>

@@ -1,0 +1,15 @@
+<% f.inputs do %>
+  <%= f.input :name %> "Workout Name"
+  <h3>Exercise</h3>
+  <div id='Exercise'>
+    <%= f.semantic_fields_for :exercise do |ex| %>
+      <%= render 'exercise_fields', :f => ex %>
+    <% end %>
+    <div class='links'>
+      <%= link_to_add_association 'Add Exercise', f, :exercises %>
+    </div>
+  </div>
+  <% f.buttons do %>
+    <%= f.submit 'Add this workout!' %>
+  <% end %>
+<% end %>
