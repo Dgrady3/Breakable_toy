@@ -36,5 +36,6 @@ feature "User adds a workout to their profile", %Q{
     fill_in "Sets"
     fill_in "Reps"
     expect(page).to have_content "The workout has been added!"
+  end
 end
 

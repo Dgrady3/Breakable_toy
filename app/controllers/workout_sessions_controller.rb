@@ -24,7 +24,7 @@ class WorkoutSessionsController < ApplicationController
       params.require(:workout_session).permit(:date_completed, :description,
                                                                             workout: [:id, :name, :done, :_destroy,
                                                                             workout_exercise_connector: [:id, :sets, :reps, :rest_time, :done, :_destroy,
-                                                                            exercises: [:id, name:, :done, :_destroy]]])
+                                                                            exercises: [:id, :name, :done, :_destroy]]])
     end
   end
 
