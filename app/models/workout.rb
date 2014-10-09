@@ -6,5 +6,6 @@ class Workout < ActiveRecord::Base
 
   has_many :workout_sessions
   has_many :users, through: :workout_sessions
+
   accepts_nested_attributes_for :workout_exercise_connectors, :reject_if => :all_blank, :allow_destroy => true
 end

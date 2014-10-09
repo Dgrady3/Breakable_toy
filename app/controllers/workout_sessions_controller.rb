@@ -5,6 +5,9 @@ class WorkoutSessionsController < ApplicationController
 
   def new
     @workout_session = WorkoutSession.new
+    @workout_session.workout = Workout.new
+    @workout_session.workout.workout_exercise_connectors.build
+    Exercise.new
   end
 
   def create
