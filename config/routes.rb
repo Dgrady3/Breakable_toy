@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   root to: "welcomes#index"
   resources :categories
   resources :exercises
-  resources :workout_sessions
+  resources :workouts
+
+
   resources :users do
-    resources :workouts
+     resources :workout_sessions
   end
+
+
   resources :workout_exercise_connectors
 
 
