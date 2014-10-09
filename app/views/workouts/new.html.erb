@@ -1,24 +1,19 @@
-<div>
-   <li class="control-group nested-fields">
-  <div class="controls">
-    <%= form_for [@user, @workout] do |f| %>
+<div class='nested-fields'>
+<%= simple_form_for [@user, @workout] do |f| %>
 
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+     <%= f.input :name %>
 
-    <%= f.label :sets %>
-    <%= f.text_field :sets %>
 
-    <%= f.label :reps %>
-    <%= f.text_field :reps %>
+    <%= f.simple_fields_for :exercises do |exercise| %>
+       =render "exercises", :f => exercise.links %>
 
-    <%= f.label :rest %>
-    <%= f.text_field :rest %>
+       <%= f.input :rest_time %>
+       <%= f.input :sets %>
+       <%= f.input :reps %>
 
-    <%= f.submit "Submit" %>
-    <% end %>
-  </div>
-</li>
+    <%end%>
 
-</div>
+    <%= link_to_add_association "Add Exercise"%>
 
+    <%= f.button :submit %>
+<%end%>

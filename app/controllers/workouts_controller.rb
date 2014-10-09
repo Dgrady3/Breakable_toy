@@ -11,6 +11,8 @@ class WorkoutsController < ApplicationController
   def new
     @user = current_user
     @workout = Workout.new
+    @exer
+
   end
 
   def create
@@ -27,7 +29,7 @@ class WorkoutsController < ApplicationController
   private
 
   def workout_params
-    params.require(:workout).permit(:name)
+    params.require(:workout).permit(:name, :reps, :rest_time, :sets, exercise_attributes: [:id, :name, :done, :_destroy])
   end
 end
 
