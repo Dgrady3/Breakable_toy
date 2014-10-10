@@ -28,29 +28,24 @@ binding.pry
   private
 
   def workout_session_params
-    params.require(:workout_session).permit(
+    workout_params = params.require(:workout_session).permit(
       :"date_completed(1i)",
-      :"date_completed(2i)", 
-      :"date_completed(3i)", 
+      :"date_completed(2i)",
+      :"date_completed(3i)",
       :description,
-      workout_attributes: [ 
-        :_destroy, 
-        :name,
+      workout_attributes: [
         :_destroy,
+        :name,
         workout_exercise_connectors_attributes: [
-          "1412956089587" => [
-            :reps,
-            :sets,
-            :rest_time,
-            exercises: [
-              :name
-            ]
+          :reps,
+          :sets,
+          :rest_time,
+          exercise_attributes: [
+            :name
           ]
-        ] 
+        ]
       ]
     ).merge(user: current_user)
   end
-
-
 end
 
