@@ -1,5 +1,5 @@
 class Workout < ActiveRecord::Base
-  validates :name, presence: true
+  validates :name, presence: {message: 'Name cannot be blank'}
 
   has_many :workout_exercise_connectors
   has_many :exercises, through: :workout_exercise_connectors

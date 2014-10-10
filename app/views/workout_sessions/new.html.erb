@@ -2,7 +2,18 @@
 
 <div id="Workout_container">
   <%= form_for [current_user, @workout_session] do |f| %>
+
+    <% if @workout_session.errors.any? %>
+      <p><%= "#{@workout_session.errors.count} prevented your matchup from being saved:" %></p>
+      <ul>
+        <% @workout_session.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    <% end %>
+
     <div id="Exercise_form" class="lift_column">
+
       <%= f.label :date_completed %>
       <%= f.date_select :date_completed %>
       <%= f.label :description %>
