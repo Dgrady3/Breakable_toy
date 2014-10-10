@@ -10,8 +10,8 @@
 
 <% @user.workout_sessions.each do |session|%>
   <table>
-    <%="#{session.date_completed}"%>
-    <%="#{session.workout.name}"%>
+    <%="Date: #{session.date_completed}"%><br> 
+    <%="Workout Name: #{session.workout.name}"%>
     <thead>
       <tr>
         <th>Exercise Name</th>
@@ -20,7 +20,6 @@
         <th>Rest Time</th>
       </tr>
     </thead>
-      
     <% session.workout.workout_exercise_connectors.each do |interval| %>
     <tbody>
       <tr> 
