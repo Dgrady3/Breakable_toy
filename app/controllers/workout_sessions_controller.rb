@@ -4,6 +4,7 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def new
+    @user = (current_user)
     @workout_session = WorkoutSession.new
     @workout_session.workout = Workout.new
     @workout_session.workout.workout_exercise_connectors.build
@@ -11,7 +12,7 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:id])
+    @user = (current_user)
     @workout_session = WorkoutSession.new(workout_params)
     if @workout_session.save
       redirect_to user_workout_session_path(current_user), flash[:notice] = "The session has been added!"
