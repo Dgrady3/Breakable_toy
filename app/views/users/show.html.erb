@@ -6,6 +6,32 @@
 <%= link_to "Log a workout", new_user_workout_session_path(@user) %><br>
 
 
-<!--
-pending on carrier wave
-<%= image_tag @user.profile_photo_url.to_s %> -->
+<h3>Workout's Completed</h3>
+
+<% @user.workout_sessions.each do |session|%>
+  <table>
+    <%="#{session.date_completed}"%>
+    <%="#{session.workout.name}"%>
+    <thead>
+      <tr>
+        <th>Exercise Name</th>
+        <th>Sets</th>
+        <th>Reps</th>
+        <th>Rest Time</th>
+      </tr>
+    </thead>
+      
+    <% session.workout.workout_exercise_connectors.each do |interval| %>
+    <tbody>
+      <tr> 
+        <td><%= interval.exercise.name %></td>
+        <td><%= interval.sets %>
+        <td><%= interval.reps %>
+        <td><%= interval.rest_time %>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+<%end%>
+
+

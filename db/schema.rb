@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 20141010172738) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.string   "profile_photo"
   end
 
@@ -55,8 +59,8 @@ ActiveRecord::Schema.define(version: 20141010172738) do
   create_table "workout_exercise_connectors", force: true do |t|
     t.integer "exercise_id", null: false
     t.integer "workout_id",  null: false
-    t.integer "sets",        null: false
-    t.integer "reps",        null: false
+    t.integer "sets"
+    t.integer "reps"
     t.integer "rest_time"
   end
 

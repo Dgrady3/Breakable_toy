@@ -12,12 +12,11 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def create
-    binding.pry
-    @user = (current_user)
+    @user = User.find(params[:user_id])
     @workout_session = WorkoutSession.new(workout_session_params)
-binding.pry
     if @workout_session.save
-      redirect_to user_workout_session_path(current_user), flash[:notice] = "The session has been added!"
+      flash[:notice] = "The session has been added!"
+      redirect_to user_path(@user) 
     else
       render 'new'
       flash[:notice] = "Oops, your session could not be saved"

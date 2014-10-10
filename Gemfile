@@ -38,6 +38,7 @@ group :development, :test  do
   gem 'launchy'
   gem 'factory_girl_rails'
   gem 'shoulda'
+  gem 'quiet_assets'
 end
 
 
