@@ -1,0 +1,20 @@
+<%= f.fields_for :workout do |workout| %>
+  <%= workout.label :name, "Workout Name" %>
+  <%= workout.text_field :name %>
+  <fieldset id="my_exercises">
+    <ol>
+
+      <%= workout.fields_for :workout_exercise_connector do |workout_exercise_connector| %>
+        <%= render 'workout_exercise_connector_fields', f: workout_exercise_connector %>
+      <% end %>
+    </ol>
+
+
+
+
+    <%= link_to_add_association 'Add Exercise', f, :workout_exercise_connectors, 'data-association-insertion-node' => '#my_exercises ol', 'data-association-insertion-method' => "append" %><br>
+
+    <%= link_to_remove_association 'Remove Exercise', f %>
+
+  </fieldset>
+<% end %>
