@@ -36,10 +36,12 @@ class WorkoutSessionsController < ApplicationController
         :_destroy,
         :name,
         workout_exercise_connectors_attributes: [
+          :_destroy,
           :reps,
           :sets,
           :rest_time,
           exercise_attributes: [
+            :_destroy,
             :name
           ]
         ]

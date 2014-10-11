@@ -1,14 +1,11 @@
 <div>
   <%= f.label :name, "Workout Name" %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name, required: true %>
   <fieldset id="my_exercises">
     <ol>
     </ol>
 
     <%= link_to_add_association 'Add Exercise', f, :workout_exercise_connectors, 'data-association-insertion-node' => '#my_exercises ol', 'data-association-insertion-method' => "append" %><br>
-
-    <%= link_to_remove_association 'Remove Exercise', f %>
-
   </fieldset>
   </div>
 
