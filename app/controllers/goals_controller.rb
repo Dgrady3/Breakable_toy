@@ -1,5 +1,4 @@
 class GoalsController < ApplicationController
- 
 
   def new
     @goals = Goal.new
@@ -7,7 +6,7 @@ class GoalsController < ApplicationController
 
   def create
     @goal = Goal.create(goal_params)
-    if @goal.save 
+    if @goal.save
       flash[:notice] = "Your Goals were successfully updated!"
       redirect_to user_path(current_user)
     else
