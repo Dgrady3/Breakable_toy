@@ -20,7 +20,7 @@ class WorkoutsController < ApplicationController
       render :new
       flash[:notice] = "Oops, your workout could not be saved"
     end
-
+  end
 
     private
 
@@ -28,5 +28,3 @@ class WorkoutsController < ApplicationController
       params.require(:workout).permit(:date_completed, :description, :sets, :reps, :rest_time)
     end
   end
-  end
-end
