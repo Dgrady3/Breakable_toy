@@ -5,8 +5,7 @@ class StatsController < ApplicationController
   end
 
   def create
- 
-    @stat = Stat.create(stat_params)
+  @stat = Stat.create(stat_params)
   if @stat.save
       flash[:notice] = "The session has been added!"
       redirect_to user_path(current_user)
@@ -17,7 +16,7 @@ class StatsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @stats = Stat.find(params[:id])
   end
 
   private

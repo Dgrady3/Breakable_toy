@@ -14,9 +14,19 @@
 <% end %>
 <br>
 
+<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br>
 
-<%= link_to "Edit current stats", new_user_stat_path(@user) %>
-<br>
+
+<h4>Current Goals</h4>
+<% @user_goals.each do |goal| %>
+  <%= "Bench Goal: #{goal.bench}" %><br>
+  <%= "Squat Goal: #{goal.squat}" %><br>
+  <%= "Dead lift Goal: #{goal.dead_lift}" %><br>
+  <%= "Goal Mile time: #{goal.mile}" %><br> 
+<% end %><br>
+
+<%= link_to "Edit your current goals", new_user_goal_path(@user) %><br>
+
 
 <%= link_to "Log a new workout", new_user_workout_session_path(@user) %><br>
 
