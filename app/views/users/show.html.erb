@@ -3,14 +3,57 @@
   <img src="<%= @user.profile_photo.url %>" atl="profile photos" class="profile"/>
 </div>
 
+<h4>About:</h4>
+<% if @user.age == nil %>
+   <%= "Age: --" %>
+  <% else %>
+  <%= "Age: #{@user.age}" %>
+<% end %>
+<br>
+
+<% if @user.location == nil %>
+   <%= "Location: --" %>
+  <% else %>
+  <%= "Location: #{@user.location}" %>
+<% end %>
+<br>
+
+<% if @user.gender == nil %>
+     <%= "Gender: --" %>
+    <% else %>
+  <%= "Gender: #{@user.gender}" %>
+<% end %>
+<br>
+
+<% if @user.occupation == nil %>
+    <%= "Occupation: --" %>
+<% else %>
+<%= "Occupation: #{@user.gender}" %>
+<% end %>
+<br>
+
+<% if @user.gym == nil %>
+    <%= "Gym: --" %>
+<% else %>
+<%= "Current Gym: #{@user.gym}" %>
+<% end %>
+<br>
+
+<% if @user.about == nil %>
+    <%= "About: --" %>
+<% else %>
+<%= " Personal Description: #{@user.about}" %>
+<%end%>
+<br>
 <%= link_to "Edit Profile", edit_user_path(@user) %><br>
+
 
 <h4>Current Stats</h4>
 <% @user_stats.each do |stat| %>
   <%= "Bench Max: #{stat.bench}" %><br>
   <%= "Squat Max: #{stat.squat}" %><br>
   <%= "Dead lift Max: #{stat.dead_lift}" %><br>
-  <%= "Best Mile time: #{stat.mile}" %><br> 
+  <%= "Best Mile time: #{stat.mile}" %><br>
 <% end %>
 <br>
 
@@ -22,7 +65,7 @@
   <%= "Bench Goal: #{goal.bench}" %><br>
   <%= "Squat Goal: #{goal.squat}" %><br>
   <%= "Dead lift Goal: #{goal.dead_lift}" %><br>
-  <%= "Goal Mile time: #{goal.mile}" %><br> 
+  <%= "Goal Mile time: #{goal.mile}" %><br>
 <% end %><br>
 
 <%= link_to "Edit your current goals", new_user_goal_path(@user) %><br>
@@ -35,7 +78,7 @@
 
 <% @user_workout_sessions.each do |session|%>
   <table>
-    <%="Date: #{session.date_completed}"%><br> 
+    <%="Date: #{session.date_completed}"%><br>
     <%="Workout Name: #{session.workout.name}"%><br>
     <%= link_to "Edit this workout",'workout_sessions#edit' %><br>
     <%= link_to "Delete this workout", 'workout_sessions#destroy', method: :delete %>
@@ -49,7 +92,7 @@
     </thead>
     <% session.workout.workout_exercise_connectors.each do |interval| %>
     <tbody>
-      <tr> 
+      <tr>
         <td><%= interval.exercise.name %></td>
         <td><%= interval.sets %>
         <td><%= interval.reps %>

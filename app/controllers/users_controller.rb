@@ -1,14 +1,10 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
-    @user_workout_sessions = @user.workout_sessions 
+    @user = current_user
+    @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stats
     @user_goals = @user.goals
-  end
-
-  def edit
-    @user = User.find(params[:id])
   end
 
   def create
@@ -17,16 +13,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
+    binding.pry
     if @user.update(user_params)
       flash[:notice] = "Updated profile!"
-      binding.pry
       redirect_to user_path(@user)
     else
       render :edit
       flash[:notice] = "Oops, something went wrong. Please try again!"
     end
   end
-  
+
   def edit
     @user = current_user
     @workout_sessions = WorkoutSession.find(params[:id])
@@ -42,6 +38,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :first_name, :last_name)
+    params.require(:user).permit(:image, :first_name, :last_name, :age, :gender, :location, :occupation, :gym, :about)
   end
 end
