@@ -10,31 +10,23 @@ feature "User logs a workout", %Q{
     user = FactoryGirl.create(:user)
     sign_in_as(user)
     visit root_path
-    click_on "Profile Page"
-    click_on "Log a workout"
 
-    # build a workout object with some exercise objects
-    prev_workout_count = Workout.count # we'll need this to test that a new workout was successfully created later on
+
+    click_link("Profile Page")
+    click_on "Log a new workout"
+
+    prev_workout_count = Workout.count
     workout = FactoryGirl.build(:workout)
     exercises = FactoryGirl.build(:exercise)
     @workout_exercise_connector = FactoryGirl.build(:workout_exercise_connector)
 
-
     fill_in "Workout Name", with: workout.name
-    # add a couple of boxes to add exercises
-      click_on "Add Exercise"
+    click_on "Add Exercise"
 
-
-
-    # fill in each exercise form
-    # (You'll need to use the within blocks b/c you'll have multiple "Exercise", "Sets", etc. fields on your page.
-    # you won't know what CSS selectors to use for the within blocks until the form is actually built.
-    # then you can inspect element and figure out how to properly target them.)
-
-      fill_in "Exercise", with: exercises.name
-      fill_in "Rest time", with: workout_exercise_connector.rest_time
-      fill_in "Sets", with: workout_exercise_connector.sets
-      fill_in "Reps", with: workout_exercise_connector.reps
+    fill_in "Exercise", with: exercises.name
+    fill_in "Rest time", with: workout_exercise_connector.rest_time
+    fill_in "Sets", with: workout_exercise_connector.sets
+    fill_in "Reps", with: workout_exercise_connector.reps
 
 
 

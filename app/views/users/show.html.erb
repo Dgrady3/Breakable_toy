@@ -45,62 +45,75 @@
 <%= " Personal Description: #{@user.about}" %>
 <%end%>
 <br>
-<%= link_to "Edit Profile", edit_user_path(@user) %><br>
+<%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+
+<div class="user_stats">
+  <% if @user_stats != nil %>
+    <h4>Current Stats</h4>
+    <%= "Bench Max: #{@user_stats.bench}" %><br>
+    <%= "Squat Max: #{@user_stats.squat}" %><br>
+    <%= "Dead lift Max: #{@user_stats.dead_lift}" %><br>
+    <%= "Best Mile time: #{@user_stats.mile}" %><br>
+    <%= "Weight (lbs): #{@user_stats.weight}" %><br>
+    <%= "Body fat: #{@user_stats.body_fat}" %><br>
+  <% else %>
+    <%= "You have no current stats" %><br>
+  <%end%>
+</div>
+
+<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br><br>
 
 
-<h4>Current Stats</h4>
-  <%= "Bench Max: #{@user_stats.bench}" %><br>
-  <%= "Squat Max: #{@user_stats.squat}" %><br>
-  <%= "Dead lift Max: #{@user_stats.dead_lift}" %><br>
-  <%= "Best Mile time: #{@user_stats.mile}" %><br>
-  <%= "Weight (lbs): #{@user_stats.weight}" %><br>
-  <%= "Body fat: #{@user_stats.body_fat}" %><br>
+<div class="user_goals">
+  <% if @user_goals != nil %>
+   <h4>Current Goals</h4>
+    <%= "Bench Goal: #{@user_goals.bench}" %><br>
+    <%= "Squat Goal: #{@user_goals.squat}" %><br>
+    <%= "Dead lift Goal: #{@user_goals.dead_lift}" %><br>
+    <%= "Goal Mile time: #{@user_goals.mile}" %><br>
+    <%= "Weight (lbs): #{@user_goals.weight}" %><br>
+    <%= "Goal Body fat %: #{@user_goals.body_fat}" %><br>
+  <% else %>
+    <%= "You have no current Goals" %><br>
+  <%end%>
+</div>
+
+<%= link_to "Edit your current goals", new_user_goal_path(@user) %><br><br>
+
+
+<%if @user_workout_session != nil%>
+    <h4>Workout's Completed</h4>
+
+    <% @user_workout_sessions.each do |session|%>
+      <table>
+        <%="Date: #{session.date_completed}"%><br>
+        <%="Workout Name: #{session.workout.name}"%><br>
+        <%= link_to "Edit this workout",'workout_sessions#edit' %><br>
+        <%= link_to "Delete this workout", 'workout_sessions#destroy', method: :delete %>
+        <thead>
+          <tr>
+            <th>Exercise Name</th>
+            <th>Sets</th>
+            <th>Reps</th>
+            <th>Rest Time</th>
+          </tr>
+        </thead>
+        <% session.workout.workout_exercise_connectors.each do |interval| %>
+        <tbody>
+          <tr>
+            <td><%= interval.exercise.name %></td>
+            <td><%= interval.sets %>
+            <td><%= interval.reps %>
+            <td><%= interval.rest_time %>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
+    <%end%>
+  <%else%>
+  <%= "You have no workous logged!"%>
+<% end %>
 <br>
-
-<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br>
-
-
-<h4>Current Goals</h4>
-  <%= "Bench Goal: #{@user_goals.bench}" %><br>
-  <%= "Squat Goal: #{@user_goals.squat}" %><br>
-  <%= "Dead lift Goal: #{@user_goals.dead_lift}" %><br>
-  <%= "Goal Mile time: #{@user_goals.mile}" %><br>
-  <%= "Weight (lbs): #{@user_goals.weight}" %><br>
-  <%= "Goal Body fat %: #{@user_goals.body_fat}" %><br>
-
-<%= link_to "Edit your current goals", new_user_goal_path(@user) %><br>
-
-
 <%= link_to "Log a new workout", new_user_workout_session_path(@user) %><br>
-
-
-<h4>Workout's Completed</h4>
-
-<% @user_workout_sessions.each do |session|%>
-  <table>
-    <%="Date: #{session.date_completed}"%><br>
-    <%="Workout Name: #{session.workout.name}"%><br>
-    <%= link_to "Edit this workout",'workout_sessions#edit' %><br>
-    <%= link_to "Delete this workout", 'workout_sessions#destroy', method: :delete %>
-    <thead>
-      <tr>
-        <th>Exercise Name</th>
-        <th>Sets</th>
-        <th>Reps</th>
-        <th>Rest Time</th>
-      </tr>
-    </thead>
-    <% session.workout.workout_exercise_connectors.each do |interval| %>
-    <tbody>
-      <tr>
-        <td><%= interval.exercise.name %></td>
-        <td><%= interval.sets %>
-        <td><%= interval.reps %>
-        <td><%= interval.rest_time %>
-      </tr>
-      <%end%>
-    </tbody>
-  </table>
-<%end%>
 
 

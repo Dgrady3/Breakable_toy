@@ -1,7 +1,10 @@
 class UsersController < ApplicationController
 
-  def show
+  def index
+    @users = User.all
+  end
 
+  def show
     @user = current_user
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stats[0]
