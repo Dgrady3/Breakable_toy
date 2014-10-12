@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012191632) do
+ActiveRecord::Schema.define(version: 20141012212105) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20141012191632) do
     t.string  "dead_lift", null: false
     t.string  "mile",      null: false
     t.integer "user_id",   null: false
+    t.integer "weight"
+    t.integer "body_fat"
   end
 
   create_table "stats", force: true do |t|
@@ -44,6 +46,8 @@ ActiveRecord::Schema.define(version: 20141012191632) do
     t.string  "dead_lift", null: false
     t.string  "mile",      null: false
     t.integer "user_id",   null: false
+    t.integer "weight"
+    t.integer "body_fat"
   end
 
   create_table "users", force: true do |t|

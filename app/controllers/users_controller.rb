@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
 
   def show
+
     @user = current_user
     @user_workout_sessions = @user.workout_sessions
-    @user_stats = @user.stats
-    @user_goals = @user.goals
+    @user_stats = @user.stats[0]
+    @user_goals = @user.goals[0]
   end
 
   def create
@@ -13,7 +14,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
     if @user.update(user_params)
       flash[:notice] = "Updated profile!"
       redirect_to user_path(@user)
@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
+    @user_stats = Stats.find(params[:id])
     @workout_sessions = WorkoutSession.find(params[:id])
   end
 
@@ -38,6 +39,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :first_name, :last_name, :age, :gender, :location, :occupation, :gym, :about)
+    params.require(:user).permit(:image, :first_name, :last_name, :age, :gender, :location, :occupation, :gym, :about).merge(user: current_user)
   end
 end
