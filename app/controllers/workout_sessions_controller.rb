@@ -12,15 +12,19 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @workout_session = WorkoutSession.new(workout_session_params)
-    if @workout_session.save
+    @workout_session = WorkoutSession.create(workout_session_params)
+    @workout_session = WorkoutSession.all
+    if @workout_session[0].save
       flash[:notice] = "The session has been added!"
-      redirect_to user_path(@user) 
+      redirect_to user_path(current_user)
     else
       render 'new'
       flash[:notice] = "Oops, your session could not be saved"
     end
+  end
+
+  def edit
+    
   end
 
 
@@ -28,20 +32,24 @@ class WorkoutSessionsController < ApplicationController
 
   def workout_session_params
     workout_params = params.require(:workout_session).permit(
+      :id,
       :"date_completed(1i)",
       :"date_completed(2i)",
       :"date_completed(3i)",
       :description,
       workout_attributes: [
         :_destroy,
+        :id,
         :name,
         workout_exercise_connectors_attributes: [
           :_destroy,
+          :id,
           :reps,
           :sets,
           :rest_time,
           exercise_attributes: [
             :_destroy,
+            :id,
             :name
           ]
         ]

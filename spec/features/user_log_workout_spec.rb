@@ -17,13 +17,14 @@ feature "User logs a workout", %Q{
     prev_workout_count = Workout.count # we'll need this to test that a new workout was successfully created later on
     workout = FactoryGirl.build(:workout)
     exercises = FactoryGirl.build(:exercise)
-    workout_exercise_connector = FactoryGirl.build(:workout_exercise_connector)
+    @workout_exercise_connector = FactoryGirl.build(:workout_exercise_connector)
 
 
-    fill_in "Workout Name", with: workout.name do
+    fill_in "Workout Name", with: workout.name
     # add a couple of boxes to add exercises
-      click_on "add exercise"
-    end
+      click_on "Add Exercise"
+
+
 
     # fill in each exercise form
     # (You'll need to use the within blocks b/c you'll have multiple "Exercise", "Sets", etc. fields on your page.

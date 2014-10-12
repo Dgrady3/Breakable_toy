@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+   
+    @user = current_user
+    @user_workout_sessions = @user.workout_sessions
   end
 
   def edit
@@ -21,6 +23,18 @@ class UsersController < ApplicationController
       render :edit
       flash[:notice] = "Oops, something went wrong. Please try again!"
     end
+  end
+  
+  def edit
+    @user = current_user
+    @workout_sessions = WorkoutSession.find(params[:id])
+  end
+
+  def destroy
+    @user = (current_user)
+    @user_workout_session = @user.workout_sessions[0]
+    @user_workout_session.destroy
+    redirect_to root_path
   end
 
   def user_params

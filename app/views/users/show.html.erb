@@ -3,18 +3,19 @@
   <img src="<%= @user.profile_photo.url %>" atl="profile photos" class="profile"/>
 </div>
 
-
-
 <%= link_to "Edit Profile", edit_user_path(@user) %><br>
 <%= link_to "Log a workout", new_user_workout_session_path(@user) %><br>
 
 
 <h3>Workout's Completed</h3>
 
-<% @user.workout_sessions.each do |session|%>
+<% @user_workout_sessions.each do |session|%>
   <table>
     <%="Date: #{session.date_completed}"%><br> 
-    <%="Workout Name: #{session.workout.name}"%>
+    <%="Workout Name: #{session.workout.name}"%><br>
+    <%= link_to "Edit this workout",'workout_sessions#edit' %><br>
+    <%= link_to "Delete this workout", 'workout_sessions#destroy', method: :delete %>
+
     <thead>
       <tr>
         <th>Exercise Name</th>
