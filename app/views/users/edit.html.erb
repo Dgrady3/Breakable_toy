@@ -1,16 +1,22 @@
-<%= simple_form_for @user do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pet.errors.count, "error") %> prohibited this pet from being saved:</h2>
 
-      <ul>
-      <% @pet.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<h3>Edit Profile Page</h3>
+<%= simple_form_for @user do |f| %>
   <%= f.file_field :profile_photo %>
   <%= f.input :profile_photo, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
   <%= f.button :submit %>
 <% end %>
+
+<h3>Edit Personal Info </h3>
+
+<%= simple_form_for @user do |f| %>
+  <%= f.input :age %>
+  <%= f.input :location %>
+  <%= f.input :occupation %>
+  <%= f.input :gym %>
+  <%= f.input :about %>
+  <%= f.input :gender, as: :radio_buttons, collection:['Male', 'Female']%>
+  <%= f.button :submit %>
+<% end %>
+
+
+

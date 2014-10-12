@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :users do
      resources :workout_sessions
      resources :stats
+     resources :goals
   end
 
 
