@@ -4,6 +4,11 @@
 </div>
 
 <%= link_to "Edit Profile", edit_user_path(@user) %><br>
+
+<%= link_to "Edit stats", edit_user_stat_path(@user) %><br>
+
+
+
 <%= link_to "Log a workout", new_user_workout_session_path(@user) %><br>
 
 
@@ -15,7 +20,6 @@
     <%="Workout Name: #{session.workout.name}"%><br>
     <%= link_to "Edit this workout",'workout_sessions#edit' %><br>
     <%= link_to "Delete this workout", 'workout_sessions#destroy', method: :delete %>
-
     <thead>
       <tr>
         <th>Exercise Name</th>
