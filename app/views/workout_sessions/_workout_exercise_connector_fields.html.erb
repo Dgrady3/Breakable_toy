@@ -2,6 +2,7 @@
   <%= f.fields_for :exercise_attributes do |exercise| %>
     <%= exercise.label :name, "Exercise" %>
     <%= exercise.text_field :name, required: true %>
+    <%= exercise.hidden_field :id %>
   <% end %>
 
   <%= f.label :reps %>
@@ -10,6 +11,7 @@
   <%= f.text_field :sets, required: true %>
   <%= f.label :rest_time %>
   <%= f.text_field :rest_time, required: true %>
+  <%= f.hidden_field :id %>
 
 
   <%= link_to_remove_association "Remove Exercise", f %>
