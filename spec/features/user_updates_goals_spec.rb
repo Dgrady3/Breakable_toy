@@ -12,14 +12,12 @@ feature "User fills in information about their profile", %Q{
     sign_in_as(user)
     visit root_path
     click_on "Profile Page"
-    click_on "Edit your current stats"
+    click_on "Edit your current goals"
     fill_in "Max Bench", with: stat.bench
     fill_in "Squat Max", with: stat.squat
     fill_in "Dead lift Max", with: stat.dead_lift
     fill_in "Best Mile time", with: stat.mile
     click_on 'submit'
-    
-    expect(page).to have_content "Your current stats have been added!"
+    expect(page).to have_content "Your Goals were successfully updated!"
   end
 end
-

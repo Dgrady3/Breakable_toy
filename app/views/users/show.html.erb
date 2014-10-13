@@ -47,35 +47,34 @@
 <br>
 <%= link_to "Edit Profile", edit_user_path(@user) %><br>
 
-
-<h4>Current Stats</h4>
-<% @user_stats.each do |stat| %>
-  <%= "Bench Max: #{stat.bench}" %><br>
-  <%= "Squat Max: #{stat.squat}" %><br>
-  <%= "Dead lift Max: #{stat.dead_lift}" %><br>
-  <%= "Best Mile time: #{stat.mile}" %><br>
-<% end %>
+<%if @user_stats != nil%>
+  <h4>Current Stats</h4>
+    <%= "Bench Max: #{@user_stats.bench}" %><br>
+    <%= "Squat Max: #{@user_stats.squat}" %><br>
+    <%= "Dead lift Max: #{@user_stats.dead_lift}" %><br>
+    <%= "Best Mile time: #{@user_stats.mile}" %><br>
+<%else%>
+  <%= "No Current Stats"%><br>
+<%end%>
+<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br>
 <br>
 
-<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br>
-
-
+<%if @user_goals != nil%>
 <h4>Current Goals</h4>
-<% @user_goals.each do |goal| %>
-  <%= "Bench Goal: #{goal.bench}" %><br>
-  <%= "Squat Goal: #{goal.squat}" %><br>
-  <%= "Dead lift Goal: #{goal.dead_lift}" %><br>
-  <%= "Goal Mile time: #{goal.mile}" %><br>
-<% end %><br>
-
+  <%= "Bench Goal: #{@user_goal.bench}" %><br>
+  <%= "Squat Goal: #{@user_goal.squat}" %><br>
+  <%= "Dead lift Goal: #{@user_goal.dead_lift}" %><br>
+  <%= "Goal Mile time: #{@user_goal.mile}" %><br>
+  <%else%>
+  <%= "No Current Goals"%>
+<%end%> 
+<br>
 <%= link_to "Edit your current goals", new_user_goal_path(@user) %><br>
-
-
+<br>
 <%= link_to "Log a new workout", new_user_workout_session_path(@user) %><br>
 
 
 <h4>Workout's Completed</h4>
-
 <% @user_workout_sessions.each do |session|%>
   <table>
     <%="Date: #{session.date_completed}"%><br>
