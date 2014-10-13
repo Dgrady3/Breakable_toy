@@ -6,10 +6,11 @@ class UsersController < ApplicationController
 
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
     @user_workout_sessions = @user.workout_sessions
-    @user_stats = @user.stats
-    @user_goals = @user.goals
+    @user_stats = @user.stats[0]
+    @user_goals = @user.goals[0]
+
   end
 
   def create
@@ -18,7 +19,6 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    binding.pry
     if @user.update(user_params)
       flash[:notice] = "Updated profile!"
       redirect_to user_path(@user)
@@ -30,7 +30,6 @@ class UsersController < ApplicationController
 
   def edit
     @user = current_user
-    @workout_sessions = WorkoutSession.find(params[:id])
   end
 
   def destroy

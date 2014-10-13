@@ -12,6 +12,7 @@ class WorkoutSessionsController < ApplicationController
   end
 
   def create
+    binding.pry
     @workout_session = WorkoutSession.create(workout_session_params)
     @workout_session = WorkoutSession.all
     if @workout_session[0].save

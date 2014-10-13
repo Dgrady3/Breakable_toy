@@ -18,7 +18,6 @@ feature "User fills in information about their profile", %Q{
     fill_in "Dead lift Max", with: stat.dead_lift
     fill_in "Best Mile time", with: stat.mile
     click_on 'submit'
-    
     expect(page).to have_content "Your current stats have been added!"
   end
 end

@@ -3,6 +3,11 @@ FactoryGirl.define do
     first_name "Joe"
     last_name "Moma"
     password "12345678"
+    age 22
+    location "Baston"
+    occupation "Being a baas"
+    gym "Golds?"
+    about "I'm cool"
     sequence(:email) { |n| "user#{n}@email.com" }
   end
 
