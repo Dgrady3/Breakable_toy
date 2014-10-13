@@ -20,4 +20,12 @@ FactoryGirl.define do
     sets 2
     reps 12
   end
+
+  factory :stat do
+    user_id 2
+    bench 255
+    squat 235
+    dead_lift 200
+    mile '6min'
+  end
 end

@@ -7,7 +7,7 @@ class StatsController < ApplicationController
   def create
   @stat = Stat.create(stat_params)
   if @stat.save
-      flash[:notice] = "The session has been added!"
+      flash[:notice] = "Your current stats have been added!"
       redirect_to user_path(current_user)
     else
       render 'new'
