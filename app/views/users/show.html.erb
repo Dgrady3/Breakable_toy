@@ -61,10 +61,10 @@
 
 <%if @user_goals != nil%>
 <h4>Current Goals</h4>
-  <%= "Bench Goal: #{@user_goal.bench}" %><br>
-  <%= "Squat Goal: #{@user_goal.squat}" %><br>
-  <%= "Dead lift Goal: #{@user_goal.dead_lift}" %><br>
-  <%= "Goal Mile time: #{@user_goal.mile}" %><br>
+  <%= "Bench Goal: #{@user_goals.bench}" %><br>
+  <%= "Squat Goal: #{@user_goals.squat}" %><br>
+  <%= "Dead lift Goal: #{@user_goals.dead_lift}" %><br>
+  <%= "Goal Mile time: #{@user_goals.mile}" %><br>
   <%else%>
   <%= "No Current Goals"%>
 <%end%> 

@@ -10,5 +10,8 @@ describe User do
 
   describe 'associations' do
     it { should have_many :workout_sessions}
+    it { should have_many :stats}
+    it { should have_many :goals}
+
   end
 end

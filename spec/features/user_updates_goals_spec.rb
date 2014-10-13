@@ -17,7 +17,9 @@ feature "User fills in information about their profile", %Q{
     fill_in "Squat Max", with: stat.squat
     fill_in "Dead lift Max", with: stat.dead_lift
     fill_in "Best Mile time", with: stat.mile
+    save_and_open_page
     click_on 'submit'
     expect(page).to have_content "Your Goals were successfully updated!"
+    expect(page).to_not have_content "No current goals"
   end
 end

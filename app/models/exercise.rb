@@ -5,6 +5,5 @@ class Exercise < ActiveRecord::Base
   has_many :categorizations
   has_many :categories, through: :categorizations
 
-  validates :name, presence: {message: 'Exercise name cannot be blank'}
 end
 
