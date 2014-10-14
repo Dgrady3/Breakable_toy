@@ -1,10 +1,4 @@
 
-<h3>Edit Profile Page</h3>
-<%= simple_form_for @user do |f| %>
-  <%= f.file_field :profile_photo %>
-  <%= f.input :profile_photo, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
-  <%= f.button :submit, "Upload Picture" %>
-<% end %>
 
 <h3>Edit Personal Info </h3>
 
@@ -15,6 +9,9 @@
   <%= f.input :gym %>
   <%= f.input :about %>
   <%= f.input :gender, as: :radio_buttons, collection:['Male', 'Female']%>
+  <%= "Update Profile Picture" %>
+  <%= f.file_field :image %>
+
   <%= f.button :submit %>
 <% end %>
 

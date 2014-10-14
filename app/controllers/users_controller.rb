@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stat
     @user_goals = @user.goal
-    binding.pry
   end
 
   def create
@@ -20,7 +19,8 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
+    @user.assign_attributes(user_params)
+    if @user.save
       flash[:notice] = "Updated profile!"
       redirect_to user_path(@user)
     else

@@ -2,6 +2,7 @@
 
 <ul>
   <% @users.each do |user|%>
-    <%= link_to "#{user.name}", user_path(user)  %><br>
+    <%= image_tag user.image_url(:thumb).to_s %>
+    <%= link_to "#{user.name}", user_path(user) %><br>
   <%end%>
 </ul>

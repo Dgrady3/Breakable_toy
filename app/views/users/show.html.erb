@@ -1,8 +1,15 @@
-<%= "#{ @user.name }" %>
- <%= image_tag(@user.profile_photo)%>
+<%= "#{ @user.name }" %><br>
+<% if @user.largeimage != nil%>
+  <%= image_tag(@user.largeimage)%>
+  <% elsif %>
+    <%= image_tag(@user.image_url) %>
+  <%else%>
+    <%= "Blank picture timplate goes here" %>
+<%end%>
+
+
 
 <br>
-
 <h4>About</h4>
 <% if @user.age == nil %>
    <%= "Age: --" %>
@@ -96,7 +103,8 @@
     <%else%>
     <%= link_to "Add your current goals", new_user_goal_path(@user, @user.goal) %><br>
   <%end%>
-<%end%> 
+<%end%>
+<br> 
 
 
 <% if @user != current_user %>

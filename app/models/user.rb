@@ -1,12 +1,12 @@
 class User < ActiveRecord::Base
-  has_many :workout_sessions
   has_one :stat
   has_one :goal
+  has_many :workout_sessions
   has_many :workouts, through: :workout_sessions
 
   validates :name, :email, :role, presence: true
 
-  mount_uploader :profile_photo, ProfilePhotoUploader
+  mount_uploader :image, ProfilePhotoUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name  
-    user.profile_photo = auth.info.image 
+    user.image = auth.info.image 
 
   end
 end 
@@ -28,7 +28,7 @@ end
   end
  
   def normalimage
-    "http://graph.facebook.com/#{self.uid}/picture?type=normal"
+    "http://graph.facebook.com/#{self.uid}/picture?"
   end
 
   def self.new_with_session(params, session)
