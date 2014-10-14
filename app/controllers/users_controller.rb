@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stat
     @user_goals = @user.goal
-    binding.pry
+  binding.pry
   end
 
   def create

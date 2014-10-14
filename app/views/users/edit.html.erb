@@ -1,8 +1,8 @@
 
 <h3>Edit Profile Page</h3>
-<%= simple_form_for @user do |f| %>
-  <%= f.file_field :profile_photo %>
-  <%= f.input :profile_photo, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
+<%= simple_form_for @user, html: { multipart: true } do |f| %>
+  <%= f.file_field :image %>
+  <%= f.input :image, :as => :image_preview, :input_html => {:preview_version => :thumb} %>
   <%= f.button :submit, "Upload Picture" %>
 <% end %>
 

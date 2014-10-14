@@ -1,8 +1,15 @@
-<%= "#{ @user.name }" %>
- <%= image_tag(@user.profile_photo)%>
+<%= "#{ @user.name }" %><br>
+<% if @user.largeimage != nil%>
+  <%= image_tag(@user.largeimage)%>
+  <% elsif %>
+    <%= image_tag(users.image_url.to_s :thumb) %>
+  <%else%>
+    <%= "Blank picture timplate goes here" %>
+<%end%>
+
+
 
 <br>
-
 <h4>About</h4>
 <% if @user.age == nil %>
    <%= "Age: --" %>
