@@ -15,6 +15,22 @@ class GoalsController < ApplicationController
     end
   end
 
+   def edit
+    @goals = Goal.find(params[:id])
+  end
+
+  def update
+    @goals = Goal.create(stat_params)
+    if @goals.save
+      flash[:notice] = "Your current goals have been updated!"
+      redirect_to user_path(current_user)
+    else
+      render 'new'
+      flash[:notice] = "Oops, your goals could not be saved"
+    end
+  end
+
+
   private
 
   def goal_params
