@@ -3,7 +3,7 @@
 
 <br>
 
-<h4>About:</h4>
+<h4>About</h4>
 <% if @user.age == nil %>
    <%= "Age: --" %>
   <% else %>
@@ -47,43 +47,63 @@
 <br>
 
 <% if @user != current_user %>
-  <%= ''%>
+  <%= ''%><br>
 <%else%>
 <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 <%end%>
 
 <%if @user_stats != nil%>
   <h4>Current Stats</h4>
-    <%= "Bench Max: #{@user_stats.bench}" %><br>
-    <%= "Squat Max: #{@user_stats.squat}" %><br>
-    <%= "Dead lift Max: #{@user_stats.dead_lift}" %><br>
-    <%= "Best Mile time: #{@user_stats.mile}" %><br>
+    <%= "Bench Max: #{ @user_stats.bench }" %><br>
+    <%= "Squat Max: #{ @user_stats.squat }" %><br>
+    <%= "Dead lift Max: #{ @user_stats.dead_lift }" %><br>
+    <%= "Best Mile time: #{ @user_stats.mile} " %><br>
+
+    <% if @user != current_user %>
+      <%= ''%>
+    <% else %>
+      <%= link_to "Edit your current stats", edit_user_stat_path(@user, @user.stat) %><br>
+    <br>
+    <%end%>
+
 <%else%>
-  <%= "No Current Stats"%><br>
+  <%= "No Current Stats"%><br><br>
+  <% if @user != current_user %>
+      <%= ''%>
+  <%else%>
+    <%= link_to "Add your current stats", new_user_stat_path(@user, @user.stat) %><br>
+  <%end%>
 <%end%>
-<%= link_to "Edit your current stats", edit_user_stat_path(@user, @user.stat) %><br>
-<br>
-
-
-   
-
 
 
 
 <%if @user_goals != nil%>
-<h4>Current Goals</h4>
-  <%= "Bench Goal: #{@user_goals.bench}" %><br>
-  <%= "Squat Goal: #{@user_goals.squat}" %><br>
-  <%= "Dead lift Goal: #{@user_goals.dead_lift}" %><br>
-  <%= "Goal Mile time: #{@user_goals.mile}" %><br>
+  <h4>Current Goals</h4>
+    <%= "Bench Goal: #{ @user_goals.bench }" %><br>
+    <%= "Squat Goal: #{ @user_goals.squat }" %><br>
+    <%= "Dead lift Goal: #{ @user_goals.dead_lift }" %><br>
+    <%= "Goal Mile time: #{ @user_goals.mile }" %><br>
+    
+    <% if @user != current_user %>
+      <%= ''%><br>
+    <%else%>
+      <%= link_to "Edit your current goals", new_user_goal_path(@user, @user.goal) %><br>
+    <%end%>
   <%else%>
-  <%= "No Current Goals"%>
+  <%= "No Current Goals"%><br>
+    <% if @user != current_user %>
+      <%= ''%><br>
+    <%else%>
+    <%= link_to "Add your current goals", new_user_goal_path(@user, @user.goal) %><br>
+  <%end%>
 <%end%> 
-<br>
-<%= link_to "Edit your current goals", new_user_goal_path(@user) %><br>
-<br>
-<%= link_to "Log a new workout", new_user_workout_session_path(@user) %><br>
 
+
+<% if @user != current_user %>
+    <%= ''%><br>
+  <%else%>
+  <%= link_to "Log a new workout", new_user_workout_session_path(@user) %><br>
+<% end %>
 
 <h4>Workout's Completed</h4>
 <% @user_workout_sessions.each do |session|%>
@@ -112,5 +132,8 @@
     </tbody>
   </table>
 <%end%>
+<br>
+
+<%= link_to "Back to Home", user_path %>
 
 

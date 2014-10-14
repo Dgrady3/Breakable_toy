@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :workout_sessions
   has_one :stat
-  has_many :goals
+  has_one :goal
   has_many :workouts, through: :workout_sessions
 
   validates :name, :email, :role, presence: true

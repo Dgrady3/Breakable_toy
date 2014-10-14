@@ -1,6 +1,7 @@
 <h3>Users</h3>
 
-
-<% @users.each do |user|%>
-  <%= link_to "#{user.name}", user_path(user)  %>
-<%end%>
+<ul>
+  <% @users.each do |user|%>
+    <%= link_to "#{user.name}", user_path(user)  %><br>
+  <%end%>
+</ul>

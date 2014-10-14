@@ -26,7 +26,7 @@ class StatsController < ApplicationController
       redirect_to user_path(current_user)
     else
       render 'new'
-      flash[:notice] = "Oops, your session could not be saved"
+      flash[:notice] = "Oops, your goals could not be saved"
     end
   end
 
