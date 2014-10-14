@@ -4,5 +4,5 @@ class WorkoutExerciseConnector < ActiveRecord::Base
 
   
 
-  accepts_nested_attributes_for :exercise, :allow_destroy => true
+  accepts_nested_attributes_for :exercise, allow_destroy: true
 end
