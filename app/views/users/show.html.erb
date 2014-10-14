@@ -1,7 +1,6 @@
-<%= "#{ @user.first_name } " "#{ @user.last_name }" %><br>
-<div class="panel profile_photo">
-  <img src="<%= @user.profile_photo.url %>" atl="profile photos" class="profile"/>
-</div>
+<%= "#{ @user.name }" %>
+ <%= image_tag(current_user.largeimage)%>
+<br>
 
 <h4>About:</h4>
 <% if @user.age == nil %>

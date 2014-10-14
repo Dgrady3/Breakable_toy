@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stats[0]
     @user_goals = @user.goals[0]
-
   end
 
   def create

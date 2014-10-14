@@ -9,10 +9,10 @@ class WorkoutSessionsController < ApplicationController
     @workout_session.workout = Workout.new
     @workout_session.workout.workout_exercise_connectors.build
     Exercise.new
+
   end
 
   def create
-    binding.pry
     @workout_session = WorkoutSession.create(workout_session_params)
     @workout_session = WorkoutSession.all
     if @workout_session[0].save
@@ -24,16 +24,10 @@ class WorkoutSessionsController < ApplicationController
     end
   end
 
-  def edit
-    
-  end
-
-
   private
 
   def workout_session_params
     workout_params = params.require(:workout_session).permit(
-      :id,
       :"date_completed(1i)",
       :"date_completed(2i)",
       :"date_completed(3i)",
