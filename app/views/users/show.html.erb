@@ -2,7 +2,7 @@
 <% if @user.largeimage != nil%>
   <%= image_tag(@user.largeimage)%>
   <% elsif %>
-    <%= image_tag(users.image_url.to_s :thumb) %>
+    <%= image_tag(@user.image_url) %>
   <%else%>
     <%= "Blank picture timplate goes here" %>
 <%end%>
@@ -103,7 +103,8 @@
     <%else%>
     <%= link_to "Add your current goals", new_user_goal_path(@user, @user.goal) %><br>
   <%end%>
-<%end%> 
+<%end%>
+<br> 
 
 
 <% if @user != current_user %>

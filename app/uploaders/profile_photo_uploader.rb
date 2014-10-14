@@ -3,8 +3,8 @@
 class ProfilePhotoUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-   include CarrierWave::RMagick
-   #include CarrierWave::MiniMagick
+  #include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
   #if Rails.env.test?
@@ -18,6 +18,10 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
   # This is a sensible default for uploaders that are meant to be mounted:
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def default_url
+    "/assets/default_images/" + [version_name, "default.png"].compact.join('_')
   end
 
   # Provide a default URL as a default if there hasn't been a file uploaded:
@@ -37,7 +41,7 @@ class ProfilePhotoUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
     version :thumb do
-      process :resize_to_limit => [100, 100]
+      process :resize_to_fit => [100, 100]
     end
 
   # Add a white list of extensions which are allowed to be uploaded.
