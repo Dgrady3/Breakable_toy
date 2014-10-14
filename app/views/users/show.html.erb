@@ -1,5 +1,5 @@
 <%= "#{ @user.name }" %>
- <%= image_tag(current_user.largeimage)%>
+ <%= image_tag(@user.profile_photo)%>
 
 <br>
 
@@ -45,7 +45,12 @@
 <%= " Personal Description: #{@user.about}" %>
 <%end%>
 <br>
-<%= link_to "Edit Profile", edit_user_path(@user) %><br>
+
+<% if @user != current_user %>
+  <%= ''%>
+<%else%>
+<%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+<%end%>
 
 <%if @user_stats != nil%>
   <h4>Current Stats</h4>
@@ -56,8 +61,14 @@
 <%else%>
   <%= "No Current Stats"%><br>
 <%end%>
-<%= link_to "Edit your current stats", new_user_stat_path(@user) %><br>
+<%= link_to "Edit your current stats", edit_user_stat_path(@user, @user.stat) %><br>
 <br>
+
+
+   
+
+
+
 
 <%if @user_goals != nil%>
 <h4>Current Goals</h4>

@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @user_workout_sessions = @user.workout_sessions
-    @user_stats = @user.stats[0]
+    @user_stats = @user.stat
     @user_goals = @user.goals[0]
   end
 
@@ -41,6 +41,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :first_name, :last_name, :age, :gender, :location, :occupation, :gym, :about)
+    params.require(:user).permit(:image, :name, :age, :gender, :location, :occupation, :gym, :about)
   end
 end

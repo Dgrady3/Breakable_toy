@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :workout_sessions
-  has_many :stats
+  has_one :stat
   has_many :goals
   has_many :workouts, through: :workout_sessions
 
@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
     user.email = auth.info.email
     user.password = Devise.friendly_token[0,20]
     user.name = auth.info.name  
-    user.image = auth.info.image 
+    user.profile_photo = auth.info.image 
 
   end
 end 
