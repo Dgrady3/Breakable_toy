@@ -15,7 +15,7 @@ class GoalsController < ApplicationController
     end
   end
 
-   def edit
+  def edit
     @goals = Goal.find(params[:id])
   end
 
