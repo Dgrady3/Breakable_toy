@@ -19,8 +19,7 @@ class WorkoutsController < ApplicationController
        redirect_to workout_path(current_user)
     else
       flash[:notice] = "Oops, your workout could not be saved"
-      render :new
-      
+      render :new 
     end
   end
 

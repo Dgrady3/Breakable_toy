@@ -25,8 +25,8 @@ class GoalsController < ApplicationController
       flash[:notice] = "Your current goals have been updated!"
       redirect_to user_path(current_user)
     else
-      render 'new'
       flash[:notice] = "Oops, your goals could not be saved"
+      render 'new'
     end
   end
 

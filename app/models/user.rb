@@ -9,7 +9,8 @@ class User < ActiveRecord::Base
   has_many :inverse_friends, :through => :inverse_friendships, :source => :user
 
 
-  validates :name, :email, :role, presence: true
+  validates :name, :role, presence: true
+  validates :email, :role, presence: true
 
   mount_uploader :image, ProfilePhotoUploader
   # Include default devise modules. Others available are:
@@ -42,13 +43,6 @@ class User < ActiveRecord::Base
       end
     end
   end
-
-  def my_frind(user)
-
-    
-  end
-
-
 end
 
 

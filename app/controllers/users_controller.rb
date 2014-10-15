@@ -4,8 +4,6 @@ class UsersController < ApplicationController
     @users = User.where.not(id: current_user.id)
   end
 
-   
-
   def show
     @user = User.find(params[:id])
     @user_workout_sessions = @user.workout_sessions
@@ -13,7 +11,6 @@ class UsersController < ApplicationController
     @user_goals = @user.goal
     @user_friends = @user.friends
     binding.pry
-
   end
 
   def create
@@ -27,8 +24,8 @@ class UsersController < ApplicationController
       flash[:notice] = "Updated profile!"
       redirect_to user_path(@user)
     else
-      render :edit
       flash[:notice] = "Oops, something went wrong. Please try again!"
+      render :edit
     end
   end
 

@@ -19,8 +19,8 @@ class WorkoutSessionsController < ApplicationController
       flash[:notice] = "The session has been added!"
       redirect_to user_path(current_user)
     else
-      render 'new'
       flash[:notice] = "Oops, your session could not be saved"
+      render 'new'
     end
   end
 
