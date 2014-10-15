@@ -103,6 +103,27 @@
 <br> 
 
 
+
+
+<h2>Your Friends</h2>
+<ul>
+  <% for user in @user.friends %>
+  <li><%= h user.name %>
+  (<%= link_to "remove", friendship_path, :method => :delete %>)
+  </li>
+  <% end %>  
+</ul>
+
+<p>Username: <%=h @user.name %></p>
+
+<p><%= link_to "Find Friends", users_path %></p>
+
+
+
+
+
+
+
 <% if @user != current_user %>
     <%= ''%><br>
   <%else%>

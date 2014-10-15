@@ -3,6 +3,11 @@ class User < ActiveRecord::Base
   has_one :goal
   has_many :workout_sessions
   has_many :workouts, through: :workout_sessions
+  has_many :friendships
+  has_many :friends, through: :friendships
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
 
   validates :name, :email, :role, presence: true
 
@@ -36,14 +41,6 @@ end
       if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
         user.email = data["email"] if user.email.blank?
       end
-    end
-  end
-
-  def blank_image(user)
-    if @user.image.empty?
-      "/assests/default_photo.jpg"
-    else
-      @user.image.url
     end
   end
 end
