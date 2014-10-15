@@ -25,8 +25,8 @@ class GoalsController < ApplicationController
       flash[:notice] = "Your current goals have been updated!"
       redirect_to user_path(current_user)
     else
-      render 'new'
       flash[:notice] = "Oops, your goals could not be saved"
+      render 'new'
     end
   end
 
@@ -35,5 +35,11 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).permit(:bench, :squat, :dead_lift, :mile).merge(user: current_user)
+  ends
+
+  def require_login
+    unless current_user
+      redirect_to new_user_registration_path
+    end
   end
 end

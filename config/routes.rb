@@ -4,14 +4,12 @@ Rails.application.routes.draw do
   resources :categories
   resources :exercises
   resources :workouts
-
-
+  resources :friendships
+  resources :workout_exercise_connectors
+  
   resources :users do
      resources :workout_sessions
      resources :stats
      resources :goals
   end
-
-
-  resources :workout_exercise_connectors
 end

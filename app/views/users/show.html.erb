@@ -2,9 +2,6 @@
 
   <%= image_tag(@user.largeimage)%>
 
-
-
-
 <br>
 <h4>About</h4>
 <% if @user.age == nil %>
@@ -48,12 +45,26 @@
 <%= " Personal Description: #{@user.about}" %>
 <%end%>
 <br>
-
 <% if @user != current_user %>
-  <%= ''%><br>
+  <%= ''%>
 <%else%>
-<%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+  <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 <%end%>
+
+  <% if @user_friends.count == 0  %>
+    <%= ' No Current Friends' %><br>
+    <%= link_to ' Find Friends', users_path%><br><br>
+  <% else %>
+    <h4>Friends</h4>
+      <ul>
+        <% @user.friends.each do |user| %>
+          <li>
+            <%= user.name %>
+            <%= button_to "remove", friendship_path, :method => :delete %>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>  
 
 <%if @user_stats != nil%>
   <h4>Current Stats</h4>
@@ -70,15 +81,14 @@
     <%end%>
 
 <%else%>
-  <%= "No Current Stats"%><br><br>
+  <%= "No Current Stats"%><br>
   <% if @user != current_user %>
       <%= ''%>
   <%else%>
     <%= link_to "Add your current stats", new_user_stat_path(@user, @user.stat) %><br>
   <%end%>
 <%end%>
-
-
+<br>
 
 <%if @user_goals != nil%>
   <h4>Current Goals</h4>
@@ -101,7 +111,6 @@
   <%end%>
 <%end%>
 <br> 
-
 
 <% if @user != current_user %>
     <%= ''%><br>
@@ -137,7 +146,4 @@
   </table>
 <%end%>
 <br>
-
 <%= link_to "Back to Home", user_path %>
-
-
