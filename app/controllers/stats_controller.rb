@@ -1,5 +1,6 @@
 class StatsController < ApplicationController
-  
+  before_filter :require_login
+
   def new
     @stats = Stat.new
   end
@@ -34,6 +35,12 @@ class StatsController < ApplicationController
 
   def stat_params
       params.require(:stat).permit(:bench, :squat, :dead_lift, :mile).merge(user: current_user)
+  end
+
+  def require_login
+    unless current_user
+      redirect_to new_user_registration_path
+    end
   end
 end
 

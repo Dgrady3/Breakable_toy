@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_login
 
   def index
     @users = User.where.not(id: current_user.id)
@@ -44,5 +45,11 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:image, :name, :age, :gender, :location, :occupation, :gym, :about)
+  end
+
+   def require_login
+    unless current_user
+      redirect_to new_user_registration_path
+    end
   end
 end

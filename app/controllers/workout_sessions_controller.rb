@@ -1,4 +1,6 @@
 class WorkoutSessionsController < ApplicationController
+  before_filter :require_login
+  
   def index
     @workout_sessions = WorkoutSession.all
   end
@@ -51,5 +53,12 @@ class WorkoutSessionsController < ApplicationController
       ]
     ).merge(user: current_user)
   end
+
+  def require_login
+    unless current_user
+      redirect_to new_user_registration_path
+    end
+  end
 end
+
 
