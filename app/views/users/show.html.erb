@@ -107,7 +107,7 @@
 
 <h2>Your Friends</h2>
 <ul>
-  <% for user in @user.friends %>
+  <% @user.friends.each do |user| %>
   <li><%= h user.name %>
   (<%= link_to "remove", friendship_path, :method => :delete %>)
   </li>
