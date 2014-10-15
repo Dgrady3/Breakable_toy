@@ -12,7 +12,7 @@ feature "User fills in information about their profile", %Q{
     sign_in_as(user)
     visit root_path
     click_on "Profile Page"
-    save_and_open_page
+   
     click_on "Add your current goals"
     fill_in "Max Bench", with: stat.bench
     fill_in "Squat Max", with: stat.squat
