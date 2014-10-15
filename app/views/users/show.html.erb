@@ -48,12 +48,38 @@
 <%= " Personal Description: #{@user.about}" %>
 <%end%>
 <br>
-
+<br>
 <% if @user != current_user %>
   <%= ''%><br>
 <%else%>
-<%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+  <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
 <%end%>
+<br>
+<br>
+
+
+  <% if @user_friends.count == 0  %>
+    <%=' No current friends'%><br>
+  <% else %>
+    <h4>Friends</h4>
+      <ul>
+        <% @user.friends.each do |user| %>
+          <li>
+            <% if user != current_user %>
+              <% '' %>
+            <%else%>
+              <%= link_to "remove", friendship_path, :method => :delete %>
+            <%end%>
+          </li>
+        <% end %>
+      </ul>
+  <% end %>  
+
+
+
+
+
+
 
 <%if @user_stats != nil%>
   <h4>Current Stats</h4>
@@ -105,18 +131,11 @@
 
 
 
-<h2>Your Friends</h2>
-<ul>
-  <% @user.friends.each do |user| %>
-  <li><%= h user.name %>
-  (<%= link_to "remove", friendship_path, :method => :delete %>)
-  </li>
-  <% end %>  
-</ul>
 
-<p>Username: <%=h @user.name %></p>
 
-<p><%= link_to "Find Friends", users_path %></p>
+
+
+
 
 
 

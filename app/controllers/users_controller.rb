@@ -11,6 +11,8 @@ class UsersController < ApplicationController
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stat
     @user_goals = @user.goal
+    @user_friends = @user.friends
+    binding.pry
 
   end
 
