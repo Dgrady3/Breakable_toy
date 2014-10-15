@@ -15,10 +15,12 @@ class WorkoutsController < ApplicationController
   def create
     @workout = Workout.new
     if @workout.save
-      redirect_to @workout_path(current_user) flash[:notice] = "The workout has been added!"
+       flash[:notice] = "The workout has been added!"
+       redirect_to @workout_path(current_user)
     else
-      render :new
       flash[:notice] = "Oops, your workout could not be saved"
+      render :new
+      
     end
   end
 
