@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    binding.pry
   end
 
    
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
     @user_workout_sessions = @user.workout_sessions
     @user_stats = @user.stat
     @user_goals = @user.goal
+
   end
 
   def create

@@ -1,8 +1,10 @@
 <h3>Users</h3>
 
-<ul>
   <% @users.each do |user|%>
-    <%= image_tag user.image_url(:thumb).to_s %>
-    <%= link_to "#{user.name}", user_path(user) %><br>
+   <% if user.image.blank? %>
+    <%= image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/dumbbell.png", size: "100x100") %>
+    <%else%>
+      <%= image_tag user.image_url(:thumb).to_s %>
+      <%= link_to "#{user.name}", user_path(user) %><br>
+    <%end%>
   <%end%>
-</ul>

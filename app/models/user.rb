@@ -38,6 +38,14 @@ end
       end
     end
   end
+
+  def blank_image(user)
+    if @user.image.empty?
+      "/assests/default_photo.jpg"
+    else
+      @user.image.url
+    end
+  end
 end
 
 

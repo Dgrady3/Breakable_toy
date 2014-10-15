@@ -1,11 +1,7 @@
 <%= "#{ @user.name }" %><br>
-<% if @user.largeimage != nil%>
+
   <%= image_tag(@user.largeimage)%>
-  <% elsif %>
-    <%= image_tag(@user.image_url) %>
-  <%else%>
-    <%= "Blank picture timplate goes here" %>
-<%end%>
+
 
 
 
