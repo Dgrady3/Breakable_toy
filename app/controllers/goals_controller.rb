@@ -35,7 +35,7 @@ class GoalsController < ApplicationController
 
   def goal_params
     params.require(:goal).permit(:bench, :squat, :dead_lift, :mile).merge(user: current_user)
-  ends
+  end
 
   def require_login
     unless current_user
