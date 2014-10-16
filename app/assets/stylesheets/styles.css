@@ -1,4 +1,4 @@
-.home {
+body {
   background-image: url('http://www.personal.psu.edu/afr3/blogs/siowfa13/gym.jpg');
   background-size: cover;
   background-position: center center;
@@ -21,11 +21,10 @@
     border-radius: 25px;
     opacity: 0.8;
     padding: 20px;
-    filter: alpha(opacity=60);
 }
 
 .home-wrapper {
   position: absolute;
-  padding-left: 20%;
+  padding-left: 10%;
   top: 40%;
 }
