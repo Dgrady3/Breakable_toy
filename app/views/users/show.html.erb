@@ -1,57 +1,58 @@
-<div>
-<%= "#{ @user.name }" %><br>
-<%= image_tag(@user.largeimage)%>
-
-
-<br>
-<h4>About</h4>
-<% if @user.age == nil %>
-   <%= "Age: --" %>
+<div class = "panel">
+  <%= "#{ @user.name }" %><br>
+  <%= image_tag(@user.largeimage)%>
+  <br>
+  <h4>About</h4>
+  <% if @user.age == nil %>
+     <%= "Age: --" %>
   <% else %>
-  <%= "Age: #{@user.age}" %>
-<% end %>
-<br>
+    <%= "Age: #{@user.age}" %>
+  <% end %>
+  <br>
 
-<% if @user.location == nil %>
-   <%= "Location: --" %>
+  <% if @user.location == nil %>
+    <%= "Location: --" %>
   <% else %>
-  <%= "Location: #{@user.location}" %>
-<% end %>
-<br>
+    <%= "Location: #{@user.location}" %>
+  <% end %>
+  <br>
 
-<% if @user.gender == nil %>
-     <%= "Gender: --" %>
-    <% else %>
-  <%= "Gender: #{@user.gender}" %>
-<% end %>
-<br>
+  <% if @user.gender == nil %>
+    <%= "Gender: --" %>
+  <% else %>
+    <%= "Gender: #{@user.gender}" %>
+  <% end %>
+  <br>
 
-<% if @user.occupation == nil %>
+  <% if @user.occupation == nil %>
     <%= "Occupation: --" %>
-<% else %>
-<%= "Occupation: #{@user.gender}" %>
-<% end %>
-<br>
+  <% else %>
+    <%= "Occupation: #{@user.gender}" %>
+  <% end %>
+  <br>
 
-<% if @user.gym == nil %>
+  <% if @user.gym == nil %>
     <%= "Gym: --" %>
-<% else %>
-<%= "Current Gym: #{@user.gym}" %>
-<% end %>
-<br>
+  <% else %>
+    <%= "Current Gym: #{@user.gym}" %>
+  <% end %>
+  <br>
 
-<% if @user.about == nil %>
+  <% if @user.about == nil %>
     <%= "About: --" %>
-<% else %>
-<%= " Personal Description: #{@user.about}" %>
-<%end%>
-<br>
-<% if @user != current_user %>
-  <%= ''%>
-<%else%>
-  <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
-<%end%>
+  <% else %>
+    <%= " Personal Description: #{@user.about}" %>
+  <%end%>
+  <br>
 
+  <% if @user != current_user %>
+    <%= ''%>
+  <%else%>
+    <%= link_to "Edit Profile", edit_user_path(@user) %><br><br>
+  <%end%>
+</div>
+
+<div class = 'panel'>
   <% if @user_friends.count == 0  %>
     <%= ' No Current Friends' %><br>
     <%= link_to ' Find Friends', users_path%><br><br>
@@ -66,6 +67,8 @@
         <% end %>
       </ul>
   <% end %>  
+</div>  
+
 
 <%if @user_stats != nil%>
   <h4>Current Stats</h4>
