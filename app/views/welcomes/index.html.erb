@@ -1,10 +1,26 @@
-<div class="home-wrapper">
+<% if current_user.present?%>
+  <div class="home-wrapper">
   <div class="home-container">
-    <h1>Welcome to Fit Friend</h1><br>
-    <h4><%= link_to "Workout Categories", categories_path %><h4><br>
-    <h4><%= link_to "Current users", users_path%><br><h4>
+    <h1 class = 'new_title'> Welcome to Fit Friend</h1> 
+    <h3><%= link_to "Log a New Workout", new_user_workout_session_path(current_user) %></h3>
+    <h3><%= link_to "Workout Categories", categories_path %></h3>
+    <h3><%= link_to "Current Users", users_path%></h3>
+    <% else %>
+
+    <div class="home-wrapper">
+    <div class="home-container">
+
+    <h1 class="title">Fit Friend</h1>
+      <div class="subtitle">  Support, Motivation, Health, Friends<br><br>
+      <div class= "sign_links">
+
+        <h5><%= link_to "Sign In", new_user_session_path %></h5>
+        
+        <h5><%= link_to "Sign Up", new_user_registration_path %></h5>
+      </div>
   </div>
-</div>
+  </div>
+<%end%>
 
 
 

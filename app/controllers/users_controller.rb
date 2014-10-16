@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     @user_stats = @user.stat
     @user_goals = @user.goal
     @user_friends = @user.friends
+
   end
 
   def create
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:image, :name, :age, :gender, :location, :occupation, :gym, :about)
+    params.require(:user).permit(:image, :profile_photo, :name, :age, :gender, :location, :occupation, :gym, :about)
   end
 
    def require_login
