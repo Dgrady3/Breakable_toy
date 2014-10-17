@@ -1,5 +1,5 @@
 body {
-  background-image: url('');
+  background: url('gym.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -19,7 +19,7 @@ body {
     background-color: #ffffff;
     border: 1px solid black;
     border-radius: 25px;
-    opacity: 0.8;
+    opacity: 0.9;
     padding: 20px;
 }
 
@@ -29,7 +29,7 @@ body {
 
 .home-wrapper {
   position: absolute;
-  padding-left: 20%;
+  padding-left: 13%;
   top: 40%;
 }
 
@@ -46,7 +46,7 @@ body {
 }
 
 .sign_links{
-  padding-top: 10%;
+  padding-top: 20%;
   display: inline;
 
 }
@@ -56,4 +56,45 @@ body {
   padding-top: 20%;
   margin: 10%;
 }
+
+.goal_stat {
+  display: inline;
+}
+
+.workouts {
+  background-color:;
+}
+
+
+.myButton {
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background-color:#599bb3;
+  -moz-border-radius:42px;
+  -webkit-border-radius:42px;
+  border-radius:42px;
+  border:3px solid #29668f;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:1px 6px;
+  text-decoration:none;
+  text-shadow:2px 2px 0px #3d768a;
+}
+.myButton:hover {
+  background-color:#408c99;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+
+
 
