@@ -1,20 +1,19 @@
-<h3>Users</h3>
+<div class = 'panel'>
+  <h3>Users</h3>
+  <ul>
+    <% @users.each do |user|%>
+     <% if user.image.blank? %>
 
-
-<ul>
-
-  <% @users.each do |user|%>
-   <% if user.image.blank? %>
-
-    <li><%= image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/dumbbell.png", size: "100x100") %><br>
-    <%= link_to user.name, user_path(user)%>
-    <%= button_to "Add Friend", friendships_path(friend_id: user), method: :post 
-    %>
-    <br>
-    <%else%>
-      <li><%= image_tag user.image_url(:thumb).to_s %>
-      <%= link_to "#{user.name}", user_path(user) %><br>
-      <%= button_to "Add Friend", friendships_path(friend_id: user), method: :post %></li><br>
+      <li><%= image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/dumbbell.png", size: "100x100") %><br>
+      <%= link_to user.name, user_path(user)%>
+      <%= button_to "Add Friend", friendships_path(friend_id: user), method: :post 
+      %>
+      <br>
+      <%else%>
+        <li><%= image_tag user.image_url(:thumb).to_s %>
+        <%= link_to "#{user.name}", user_path(user) %><br>
+        <%= button_to "Add Friend", friendships_path(friend_id: user), method: :post %></li><br>
+      <%end%>
     <%end%>
-  <%end%>
-</ul>
+  </ul>
+</div>

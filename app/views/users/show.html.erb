@@ -62,11 +62,9 @@
     <h4>Friends</h4>
       <ul>
         <% @user.friends.each do |user| %>
-          <li>
             <%= image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/dumbbell.png", size: "100x100") %>
             <%= user.name %><br>
             <%= link_to "Remove Friend", friendship_path, method: :delete, :class => 'myButton' %>
-          </li>
         <% end %>
       </ul>
   <% end %>
