@@ -1,0 +1,161 @@
+body {
+  background: image-path('gym.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  position: relative;
+
+}
+
+.home-container {
+    text-align: center;
+    width: 100%;
+    margin: 30px 0px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    border-radius: 25px;
+    opacity: 0.9;
+    padding: 20px;
+}
+
+.home-container .new_title {
+  margin-bottom: 10%;
+}
+
+.home-wrapper {
+  position: absolute;
+  padding-left: 13%;
+  top: 40%;
+}
+
+.subtitle{
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title{
+  margin-bottom: 0;
+}
+
+.sign_links{
+  padding-top: 20%;
+  display: inline;
+
+}
+
+.sign_links h5 {
+  display: inline;
+  padding-top: 20%;
+  margin: 10%;
+}
+
+.goal_stat {
+  display: inline;
+}
+
+.workouts {
+  background-color:;
+}
+
+
+.myButton {
+  -moz-box-shadow: 0px 10px 14px -7px #276873;
+  -webkit-box-shadow: 0px 10px 14px -7px #276873;
+  box-shadow: 0px 10px 14px -7px #276873;
+  background-color:#599bb3;
+  -moz-border-radius:42px;
+  -webkit-border-radius:42px;
+  border-radius:42px;
+  border:3px solid #29668f;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:arial;
+  font-size:17px;
+  font-weight:bold;
+  padding:1px 6px;
+  text-decoration:none;
+  text-shadow:2px 2px 0px #3d768a;
+}
+.myButton:hover {
+  background-color:#408c99;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+.sign_up {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0%;
+    text-align: center;
+}
+
+.sign_up:hover, .sign_up:focus {
+    background: #356094;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+
+.sign_up:active {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+
+.sign_in {
+    padding: 10px 15px;
+    background: #4479BA;
+    color: #FFF;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    display: block;
+    padding-top: 0;
+    padding-bottom: 0%;
+    text-align: center;
+}
+
+.sign_in:hover, .sign_in:focus {
+    background: #356094;
+    border: solid 1px #2A4E77;
+    text-decoration: none;
+}
+
+.sign_in:active {
+    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+    background: #2E5481;
+    border: solid 1px #203E5F;
+}
+
+.profile {
+  display: inline;
+
+}
+
+
+
+
+
+
