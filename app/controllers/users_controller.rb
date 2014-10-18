@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user_stats = @user.stat
     @user_goals = @user.goal
     @user_friends = @user.friends
-
   end
 
   def create
