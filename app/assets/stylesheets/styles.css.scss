@@ -1,5 +1,5 @@
 body {
-  background: image-path('gym.jpg');
+  background: image-url('gym.jpg');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;
@@ -62,7 +62,7 @@ body {
 }
 
 .workouts {
-  background-color:;
+  background-color: blue;
 }
 
 
