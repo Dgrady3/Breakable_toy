@@ -1,7 +1,6 @@
 class ExercisesController < ApplicationController
   before_filter :require_login
 
-
   def index
     @exercises = Exercises.all
   end
