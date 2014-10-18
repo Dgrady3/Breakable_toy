@@ -1,8 +1,11 @@
-<div class = "panel">
-  <%= "#{ @user.name }" %><br>
-  <%= image_tag(@user.largeimage)%>
-  <br>
-  <div class=" profile ">
+<div class = "panel overflow opacity">
+  <div class="profile-container">
+    <h3><%= "#{ @user.name }" %></h3><br>
+    <%= image_tag(@user.largeimage)%>
+    <br>
+  </div>
+
+  <div class="about-container">
     <h4>About</h4>
     <% if @user.age == nil %>
        <%= "Age: --" %>
@@ -47,32 +50,35 @@
       <%= " Personal Description: #{@user.about}" %>
     <%end%>
     <br>
+ 
 
     <% if @user != current_user %>
       <%= ''%>
     <%else%>
       <%= link_to "Edit Profile", edit_user_path(@user), :class => 'myButton' %><br><br>
     <%end%>
-  </div>
+   </div>
 </div>
 
-<div class = 'panel'>
+<div class = 'panel opacity'>
   <% if @user_friends.count == 0  %>
     <%= ' No Current Friends' %><br>
     <%= link_to ' Find Friends', users_path%><br><br>
   <% else %>
     <h4>Friends</h4>
-      <ul>
-        <% @user.friends.each do |user| %>
+      <ul class="small-block-grid-3 no-bullet">
+        <% @user.friends.each do |user| %> 
+          <li>
             <%= image_tag("https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/256/dumbbell.png", size: "100x100") %>
             <%= user.name %><br>
             <%= link_to "Remove Friend", friendship_path, method: :delete, :class => 'myButton' %>
-        <% end %>
+          </li>
+         <% end %>
       </ul>
   <% end %>
 </div>  
 
-<div class = 'panel'>
+<div class = 'panel opacity'>
   <div class = 'row'>
     <div class="large-6 columns">
       <%if @user_stats != nil%>
@@ -122,7 +128,7 @@
   </div>
 </div> 
 
-<div class = 'panel'>
+<div class = 'panel opacity'>
   <div class = 'workout-holder'>
     <% if @user != current_user %>
         <%= ''%><br>
