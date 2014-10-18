@@ -6,7 +6,6 @@ gem 'rails', '4.1.6'
 # Use postgresql as the database for Active Record
 gem 'pg'
 gem 'simple_form'
-gem 'simple_form_fancy_uploads'
 gem 'omniauth-facebook'
 gem 'mini_magick'
 # Use SCSS for stylesheets
@@ -24,10 +23,8 @@ gem 'cocoon'
 gem 'jquery-rails'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
 gem 'foundation-rails'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0',          group: :doc
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring'
