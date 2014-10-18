@@ -37,6 +37,7 @@ group :development, :test  do
   gem 'factory_girl_rails'
   gem 'shoulda'
   gem 'quiet_assets'
+  gem 'dotenv-rails'
 end
 
 
