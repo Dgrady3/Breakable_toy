@@ -1,38 +1,39 @@
-<h1> Log a workout </h1>
+<div class = 'panel'>
+  <h1> Log a workout </h1>
 
-<div id="Workout_container">
-  <%= form_for [current_user, @workout_session] do |f| %>
+  <div id="Workout_container">
+    <%= form_for [current_user, @workout_session] do |f| %>
 
-    <% if @workout_session.errors.any? %>
-      <p><%= "#{@workout_session.errors.count} problem(s) prevented your session from being saved:" %></p>
-      <ul>
-        <% @workout_session.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    <% end %>
+      <% if @workout_session.errors.any? %>
+        <p><%= "#{@workout_session.errors.count} problem(s) prevented your session from being saved:" %></p>
+        <ul>
+          <% @workout_session.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% end %>
 
-    <div id="Exercise_form" class="lift_column">
+      <div id="Exercise_form" class="lift_column">
 
-      <%= f.label :date_completed %>
-      <%= f.date_select :date_completed %>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-      <%= f.hidden_field :id %>
-      </div>
+        <%= f.label :date_completed %>
+        <%= f.date_select :date_completed %>
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+        <%= f.hidden_field :id %>
+        </div>
 
-       <p>Workout Info</p>
+         <p>Workout Info</p>
 
-      <fieldset id = "my_exercises">
-        <%= f.fields_for :workout do |workout| %>
-          <%= render 'workout_fields', f: workout %>
-        <% end %>
-      </fieldset>
-      <div>
-        <%= f.submit %>
-      </div>
-  <%end%>
+        <fieldset id = "my_exercises">
+          <%= f.fields_for :workout do |workout| %>
+            <%= render 'workout_fields', f: workout %>
+          <% end %>
+        </fieldset>
+        <div>
+          <%= f.submit %>
+        </div>
+    <%end%>
+  </div>
 </div>
-
 
 

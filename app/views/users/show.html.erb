@@ -2,56 +2,58 @@
   <%= "#{ @user.name }" %><br>
   <%= image_tag(@user.largeimage)%>
   <br>
-  <h4>About</h4>
-  <% if @user.age == nil %>
-     <%= "Age: --" %>
-  <% else %>
-    <%= "Age: #{@user.age}" %>
-  <% end %>
-  <br>
+  <div class=" profile ">
+    <h4>About</h4>
+    <% if @user.age == nil %>
+       <%= "Age: --" %>
+    <% else %>
+      <%= "Age: #{@user.age}" %>
+    <% end %>
+    <br>
 
-  <% if @user.location == nil %>
-    <%= "Location: --" %>
-  <% else %>
-    <%= "Location: #{@user.location}" %>
-  <% end %>
-  <br>
+    <% if @user.location == nil %>
+      <%= "Location: --" %>
+    <% else %>
+      <%= "Location: #{@user.location}" %>
+    <% end %>
+    <br>
 
-  <% if @user.gender == nil %>
-    <%= "Gender: --" %>
-  <% elsif @user.gender == false %>
-    <%= "Gender: Male" %>
-  <% else %>
-    <%= "Gender: Female"%>
-  <%end%>
-  <br>
+    <% if @user.gender == nil %>
+      <%= "Gender: --" %>
+    <% elsif @user.gender == false %>
+      <%= "Gender: Male" %>
+    <% else %>
+      <%= "Gender: Female"%>
+    <%end%>
+    <br>
 
-  <% if @user.occupation == nil %>
-    <%= "Occupation: --" %>
-  <% else %>
-    <%= "Occupation: #{@user.occupation}" %>
-  <% end %>
-  <br>
+    <% if @user.occupation == nil %>
+      <%= "Occupation: --" %>
+    <% else %>
+      <%= "Occupation: #{@user.occupation}" %>
+    <% end %>
+    <br>
 
-  <% if @user.gym == nil %>
-    <%= "Gym: --" %>
-  <% else %>
-    <%= "Current Gym: #{@user.gym}" %>
-  <% end %>
-  <br>
+    <% if @user.gym == nil %>
+      <%= "Gym: --" %>
+    <% else %>
+      <%= "Current Gym: #{@user.gym}" %>
+    <% end %>
+    <br>
 
-  <% if @user.about == nil %>
-    <%= "About: --" %>
-  <% else %>
-    <%= " Personal Description: #{@user.about}" %>
-  <%end%>
-  <br>
+    <% if @user.about == nil %>
+      <%= "About: --" %>
+    <% else %>
+      <%= " Personal Description: #{@user.about}" %>
+    <%end%>
+    <br>
 
-  <% if @user != current_user %>
-    <%= ''%>
-  <%else%>
-    <%= link_to "Edit Profile", edit_user_path(@user), :class => 'myButton' %><br><br>
-  <%end%>
+    <% if @user != current_user %>
+      <%= ''%>
+    <%else%>
+      <%= link_to "Edit Profile", edit_user_path(@user), :class => 'myButton' %><br><br>
+    <%end%>
+  </div>
 </div>
 
 <div class = 'panel'>
