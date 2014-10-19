@@ -20,7 +20,7 @@ body {
     border: 1px solid black;
     border-radius: 25px;
     opacity: 0.9;
-    padding: 20px;
+    padding: 15px;
 }
 
 .home-container .new_title {
@@ -35,7 +35,6 @@ body {
 
 .profile-container {
   float: left;
-  padding-left: 5%;
 }
 
 .overflow {
@@ -54,7 +53,7 @@ body {
   border-radius: 10px;
   float: left;
   margin-left: 10%;
-  padding: 5%;
+  padding: 0%;
   overflow: auto;
 }
 
@@ -169,9 +168,7 @@ body {
     border: solid 1px #203E5F;
 }
 
-.profile {
-  display: inline;
-}
+
 
 
 /*============================ play buttons ======================*/
@@ -205,11 +202,8 @@ h3:hover {
   margin-top: 0.2em;
 }
 
-.pic{
-  float: left;
-}
-
 .about {
   float: right;
 }
+
 
