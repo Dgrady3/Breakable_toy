@@ -1,14 +1,14 @@
-<div class = "panel overflow opacity">
+<div class = "panel overflow opacity margin-top">
   <div class="profile-container">
     <div class="pic">
-      <h3><%= "#{ @user.name }" %></h3><br>
+      <h2><%= "#{ @user.name }" %></h2><br>
       <%= image_tag(@user.largeimage)%>
       <br>
     </div>
   </div>
 
   <div class="about-container">
-    <h3 id = 'about'>About</h3>
+    <h2 id = 'about'>About</h2>
     <% if @user.age == nil %>
        <%= "Age: --" %>
        <br>
