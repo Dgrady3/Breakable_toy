@@ -26,6 +26,10 @@ class WorkoutSessionsController < ApplicationController
     end
   end
 
+  def edit
+    @workout_session = WorkoutSession.find(params[:id])
+  end
+
   private
 
   def workout_session_params
