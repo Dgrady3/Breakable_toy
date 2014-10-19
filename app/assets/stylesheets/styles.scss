@@ -27,6 +27,10 @@ body {
   margin-bottom: 10%;
 }
 
+.panel {
+  border-radius: 30px;
+}
+
 .home-wrapper {
   position: absolute;
   padding-left: 13%;
@@ -35,6 +39,8 @@ body {
 
 .profile-container {
   float: left;
+  text-align: center;
+  padding-left: 10%;
 }
 
 .overflow {
@@ -53,8 +59,9 @@ body {
   border-radius: 10px;
   float: left;
   margin-left: 10%;
-  padding: 0%;
+  padding-right: 5%;
   overflow: auto;
+  text-align: center;
 }
 
 .subtitle{
