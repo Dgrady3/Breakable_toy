@@ -9,22 +9,21 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   position: relative;
-
 }
 
 .home-container {
-    text-align: center;
-    width: 100%;
-    margin: 30px 0px;
-    background-color: #ffffff;
-    border: 1px solid black;
-    border-radius: 25px;
-    opacity: 0.9;
-    padding: 15px;
-    margin-left: 76px
+  text-align: center;
+  width: 100%;
+  margin: 30px 0px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 25px;
+  opacity: 0.9;
+  padding: 15px;
+  margin-left: 76px
 }
 
-.home-container .new_title {
+.home-container, .new_title {
   margin-bottom: 10%;
 }
 
@@ -59,7 +58,7 @@ body {
   overflow: auto;
 }
 
-.subtitle{
+.subtitle {
   display: block;
   padding-top: 0;
   padding-bottom: 0%;
@@ -67,14 +66,13 @@ body {
   text-transform: uppercase;
 }
 
-.title{
+.title {
   margin-bottom: 0;
 }
 
-.sign_links{
+.sign_links {
   padding-top: 20%;
   display: inline;
-
 }
 
 .sign_links h5 {
@@ -91,41 +89,43 @@ body {
   -moz-box-shadow: 0px 10px 14px -7px #276873;
   -webkit-box-shadow: 0px 10px 14px -7px #276873;
   box-shadow: 0px 10px 14px -7px #276873;
-  background-color:#599bb3;
-  -moz-border-radius:42px;
-  -webkit-border-radius:42px;
-  border-radius:42px;
-  border:3px solid #29668f;
-  display:inline-block;
-  cursor:pointer;
-  color:#ffffff;
-  font-family:arial;
-  font-size:17px;
-  font-weight:bold;
-  padding:1px 6px;
-  text-decoration:none;
-  text-shadow:2px 2px 0px #3d768a;
+  background-color: #599bb3;
+  -moz-border-radius: 42px;
+  -webkit-border-radius: 42px;
+  border-radius: 42px;
+  border: 3px solid #29668f;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: arial;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 1px 6px;
+  text-decoration: none;
+  text-shadow: 2px 2px 0px #3d768a;
 }
+
 .myButton:hover {
-  background-color:#408c99;
+  background-color: #408c99;
 }
+
 .myButton:active {
-  position:relative;
-  top:1px;
+  position: relative;
+  top: 1px;
 }
 
 
 .sign_up {
-    padding: 10px 15px;
-    background: #4479BA;
-    color: #FFF;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    display: block;
-    padding-top: 0;
-    padding-bottom: 0%;
-    text-align: center;
+  padding: 10px 15px;
+  background: #4479BA;
+  color: #FFF;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0%;
+  text-align: center;
 }
 
 .sign_up:hover, .sign_up:focus {
@@ -135,39 +135,39 @@ body {
 }
 
 .sign_up:active {
-    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    background: #2E5481;
-    border: solid 1px #203E5F;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  background: #2E5481;
+  border: solid 1px #203E5F;
 }
 
 
 .sign_in {
-    padding: 10px 15px;
-    background: #4479BA;
-    color: #FFF;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    display: block;
-    padding-top: 0;
-    padding-bottom: 0%;
-    text-align: center;
+  padding: 10px 15px;
+  background: #4479BA;
+  color: #FFF;
+  -webkit-transition-duration: 0.2s;
+  -moz-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0%;
+  text-align: center;
 }
 
 .sign_in:hover, .sign_in:focus {
-    background: #356094;
-    border: solid 1px #2A4E77;
-    text-decoration: none;
+  background: #356094;
+  border: solid 1px #2A4E77;
+  text-decoration: none;
 }
 
 .sign_in:active {
-    -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
-    background: #2E5481;
-    border: solid 1px #203E5F;
+  -webkit-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  background: #2E5481;
+  border: solid 1px #203E5F;
 }
 
 
