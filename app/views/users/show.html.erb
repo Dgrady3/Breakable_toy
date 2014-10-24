@@ -70,7 +70,7 @@
    </div>
 </div>
 
-<div class = 'panel opacity'>
+<div class = "panel opacity">
   <% if @user_friends.count == 0  %>
     <%= ' No Current Friends' %><br>
     <%= link_to ' Find Friends', users_path%><br><br>
@@ -88,7 +88,7 @@
   <% end %>
 </div>  
 
-<div class = 'panel opacity'>
+<div class = "panel opacity">
   <div class = 'row'>
     <div class="large-6 columns">
       <%if @user_stats != nil%>
@@ -113,7 +113,7 @@
       <%end%>
       <br>
     </div>
-    <div class="large-6 columns">
+    <div class="panel opacity large-6 columns">
       <%if @user_goals != nil%>
         <h4>Current Goals</h4>
           <%= "Bench Goal: #{ @user_goals.bench }" %><br>
