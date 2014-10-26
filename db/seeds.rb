@@ -7,7 +7,7 @@
 
  hash = {
   back: ["Lat pulldown", "Low rows", "Pulldowns", "Wide grip pullups"],
-  chest: ["Bench press", "Flyes", "Incline bench press", "Decline bench press"],
+  chest: ["Bench press", "Flies", "Incline bench press", "Decline bench press"],
   arms: ["Tricep cable pushdowns", "Tricep extensions", "Bicep dumbbell curls", "Hammer curls"],
   shoulders: ["Shoulder Press", "Lateral dumbbell raises", "Front dumbbell raises"],
   legs: ["Squats", "Quad extensions", "Hamstring curls", "Calf raises"],
