@@ -1,7 +1,9 @@
-<h4><%= @exercise.name %></h4>
+<div class = 'panel margin-top opacity'>
+  <h4><%= @exercise.name %></h4>
 
-<ul>
-  <%= @exercise.description %>
-</ul>
+  <ul>
+    <%= @exercise.description %>
+  </ul>
 
-<%= link_to "Back to Category", category_path(@category)%>
+  <%= link_to "Back to Category", category_path(@category)%>
+</div>
